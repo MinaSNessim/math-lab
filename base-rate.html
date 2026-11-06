@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Base rate fallacy · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Base rate fallacy">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">rates</p>
+      <h1>Base rate fallacy</h1>
+      <p class="lead">The test is accurate. The condition is rare. The name for that mix-up is the base rate fallacy.</p>
+      <section class="stage">
+        <p class="ice-intro">The test is accurate, and the condition is rare. Of the alarms, how many are real?</p>
+        <div class="compare" id="compare" hidden>
+          <p class="row-label">Positive tests in this crowd, real ones first</p>
+          <div class="positive-row" id="positive-row"></div>
+        </div>
+        <div class="crowd" id="crowd"></div>
+        <div class="legend">
+          <span><i class="swatch tp"></i>Sick and positive</span>
+          <span><i class="swatch fp"></i>Well and positive</span>
+          <span><i class="swatch fn"></i>Sick and negative</span>
+          <span><i class="swatch"></i>Well and negative</span>
+        </div>
+        <p class="caption" id="caption">Lock a guess, then draw the crowd. Green rings are real alarms. Coral rings are false alarms.</p>
+        <div class="controls guess">
+          <label class="field">Your guess <input id="guess" type="range" min="0" max="100" value="50" /> <b id="guess-label">50%</b></label>
+          <button type="button" class="btn" id="lock">Lock guess</button>
+          <span class="guess-note" id="guess-note">What share of positive tests are real?</span>
+        </div>
+        <div class="controls">
+          <label class="field">How common <input id="prev" type="range" min="1" max="200" value="10" /> <b id="prev-label">1%</b></label>
+          <label class="field">Accurate <input id="acc" type="range" min="80" max="99" value="95" /> <b id="acc-label">95%</b></label>
+          <button type="button" class="btn" id="draw" disabled>New crowd of 1,000</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="ppv-now">—</b><span>Positive tests in this crowd that are real</span></div>
+          <div class="stat"><b id="ppv-long">—</b><span>Positive tests that are real in the long run</span></div>
+          <div class="stat"><b id="counts">—</b><span>True positives / all positives</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Almost everyone is well, so a small false-alarm rate still flags many healthy people.</p>
+        <p class="spoiler" hidden>The same accuracy applies to sick people and to well people. Sick people are scarce, so most of the alarms come from the well group.</p>
+        <p>A positive test is more believable when the condition is common, and less believable when it is rare.</p>
+        <p><b>A rare crime.</b> A match that is rare among innocent people can still turn up several times in a large city.</p>
+        <p><b>A door and a test.</b> Monty showing a goat and a positive test both leave you to count everyone that result fits.</p>
+        <!-- merged: Prosecutor's fallacy | Monty Hall vs the base rate -->
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/base-rate.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

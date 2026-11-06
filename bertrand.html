@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bertrand paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Bertrand paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">paradox · traps</p>
+      <h1>Bertrand paradox</h1>
+      <p class="lead">Three fair recipes give three different answers.</p>
+      <section class="stage">
+        <p class="ice-intro">Three fair ways to draw a chord. Do they give the same answer?</p>
+        <div class="chord-box" id="circle"></div>
+        <p class="caption" id="caption">A long chord, drawn in green, is longer than a side of the yellow triangle. A short chord is red.</p>
+        <div class="controls guess">
+          <label class="field">Long chords <input id="guess" type="range" min="0" max="100" value="50" /> <b id="guess-label">50%</b></label>
+          <button type="button" class="btn" id="lock">Lock guess</button>
+          <span class="guess-note" id="guess-note">Lock a share, then draw a chord.</span>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn ghost" id="rule-ends">Two random ends</button>
+          <button type="button" class="btn ghost" id="rule-radial">A spot on a radius</button>
+          <button type="button" class="btn ghost" id="rule-mid">A random midpoint</button>
+          <button type="button" class="btn" id="once">Draw one chord</button>
+          <label class="field">Chords <input class="count" id="count" type="number" min="1" max="20000" value="800" /></label>
+          <button type="button" class="btn coral" id="run" disabled>Run many chords</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="this-chord">—</b><span>This chord</span></div>
+          <div class="stat"><b id="sim">—</b><span>Chords that were long</span></div>
+          <div class="stat"><b id="theory">—</b><span>Long-run share for this recipe</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The question is how often a random chord is longer than the side of an equilateral triangle inscribed in the circle.</p>
+        <p>Each recipe below is a fair way to say “pick a chord.” They do not pick from the same pile.</p>
+        <p class="spoiler" hidden>Two random ends are long about 1 in 3 times. A spot along a radius is long about 1 in 2. A midpoint chosen anywhere in the circle is long about 1 in 4.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/bertrand.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

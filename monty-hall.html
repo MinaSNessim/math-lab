@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monty Hall · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Monty Hall">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">paradox · doors</p>
+      <h1>Monty Hall</h1>
+      <p class="lead">Should you switch doors when Monty offers?</p>
+      <section class="stage">
+        <p class="ice-intro">Monty offers a switch. Do you take it?</p>
+        <div class="controls">
+          <button type="button" class="btn is-on" id="count-3">3 doors</button>
+          <button type="button" class="btn ghost" id="count-100">100 doors</button>
+        </div>
+        <div class="doors" id="doors"></div>
+        <div class="door-grid" id="grid" hidden></div>
+        <p class="caption" id="caption">Pick a door.</p>
+        <div class="controls">
+          <button type="button" class="btn" id="stay" disabled>Stay</button>
+          <button type="button" class="btn coral" id="switch" disabled>Switch</button>
+          <button type="button" class="btn ghost" id="next-round" hidden>Next game</button>
+          <button type="button" class="btn ghost is-on" id="host-usual">Usual host</button>
+          <button type="button" class="btn ghost" id="host-random">Random host</button>
+        </div>
+        <div class="controls">
+          <label class="field">Games <input class="count" id="count" type="number" min="1" max="20000" value="200" /></label>
+          <button type="button" class="btn" id="run">Run many games</button>
+          <button type="button" class="btn ghost" id="reset">Reset your score</button>
+        </div>
+        <div class="choice-dock" id="choice-dock" hidden>
+          <div class="dock-card">
+            <i class="mini-door is-yours" id="dock-stay-pic"></i>
+            <span id="dock-stay-label">Your door</span>
+            <button type="button" class="btn" id="dock-stay">Stay</button>
+          </div>
+          <div class="dock-card">
+            <i class="mini-door is-other" id="dock-switch-pic"></i>
+            <span id="dock-switch-label">The other door</span>
+            <button type="button" class="btn coral" id="dock-switch">Switch</button>
+          </div>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="you-games">0</b><span>Your games</span></div>
+          <div class="stat"><b id="you-stay">0%</b><span>Your stays that won</span></div>
+          <div class="stat"><b id="you-switch">0%</b><span>Your switches that won</span></div>
+          <div class="stat"><b id="batch-games">0</b><span>Games in the last run</span></div>
+          <div class="stat"><b id="batch-stay">0%</b><span>Stay wins in that run</span></div>
+          <div class="stat"><b id="batch-switch">0%</b><span>Switch wins in that run</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The car is equally likely behind any door, and you pick one.</p>
+        <p>The usual host knows where the car is and always opens a different door with a goat.</p>
+        <p>Switching wins when your first pick was a goat. With 3 doors that is two times out of three. With 100 doors it is 99 times out of 100. A random host, only in the 3-door game, sometimes reveals the car, and those deals are left out of the score.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/monty-hall.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

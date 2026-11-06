@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ostrogorski's paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Ostrogorski's paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Ostrogorski's paradox | Discursive dilemma -->
+      <p class="kicker">voting · paradox</p>
+      <h1>Ostrogorski's paradox</h1>
+      <p class="lead">Party X and Party Y disagree about a school, about taxes, and about roads. Each person votes for the party they agreed with more often.</p>
+      <section class="stage playboard" id="board">
+        <p class="ice-intro">Party X and Party Y are the two parties running against each other. They disagree about a new school, about raising taxes, and about fixing the roads. On each thing, each person says which party they agree with. The election is a separate vote: each person votes for the party they agreed with on more of those three things.</p>
+      </section>
+      <div class="notes">
+        <p>Voter 1 agrees with Party Y on the school and on taxes, and with Party X on the roads. That is two things for Party Y and one for Party X. The rule says voter 1 votes for Party Y.</p>
+        <p>Voters 2 and 3 also agree with Party Y on two things, so they vote for Party Y too. They are yellow. Voters 4 and 5 agree with Party X on all three things, so they vote for Party X. They are green.</p>
+        <p>On the school, 3 people agree with Party X and 2 agree with Party Y. Taxes is the same, 3 to 2. The roads are the same, 3 to 2.</p>
+        <p>The election is 3 votes for Party Y and 2 for Party X. Party Y wins.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/shelf.js"></script>
+  <script src="js/ostrogorski.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

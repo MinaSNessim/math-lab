@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sorites paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Sorites paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">logic · paradox</p>
+      <h1>Sorites paradox</h1>
+      <p class="lead">Remove one grain. When did it stop being a heap?</p>
+      <section class="stage playboard">
+        <p class="ice-intro">One grain is not a heap. When does removing one grain destroy the heap? Every grain is the same kind of thing, so every grain is the same color. Take them away one at a time.</p>
+        <svg class="heap" id="heap" viewBox="0 0 300 210" role="img" aria-label="A heap of grains">
+          <ellipse cx="150" cy="178" rx="120" ry="16" fill="#f5c518" stroke="#fe8e83" stroke-width="3"/>
+        </svg>
+        <p class="ice-line" id="line" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="less" data-pace="200">Remove one grain</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>One grain of sand is not a heap.</p>
+        <p>Adding one grain never seems enough to turn it into a heap.</p>
+        <p>Removing one grain never seems enough to destroy it.</p>
+        <p>Yet at some point the heap is gone.</p>
+        <p>Small steps can cross a line we cannot sharply draw.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/sorites.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

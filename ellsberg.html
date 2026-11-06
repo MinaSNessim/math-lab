@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ellsberg paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Ellsberg paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Ellsberg paradox | Knightian uncertainty -->
+      <p class="kicker">decisions · paradox</p>
+      <h1>Ellsberg paradox</h1>
+      <p class="lead">A known risk feels safer than a risk with no stated odds.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">One urn has a known mix. The other has an unknown mix. Which urn do you draw from?</p>
+        <p class="round-label" id="ask">You win if you draw a red ball. Which urn do you choose?</p>
+<img class="scene" src="images/ellsberg.jpg" alt="">
+        <div class="urn-row">
+          <button type="button" class="urn-btn" id="urn-known" data-pace="400">
+            <b>50 red, 50 black</b>
+          </button>
+          <button type="button" class="urn-btn" id="urn-unknown" data-pace="400">
+            <b>100 balls, red and black in unknown proportion</b>
+          </button>
+        </div>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+      </section>
+      <div class="notes">
+        <p>Most people choose the known urn both times.</p>
+        <p>That pair of choices cannot be explained by any fixed belief about the unknown urn.</p>
+        <p>The preference is for known probabilities over unknown ones.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/ellsberg.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

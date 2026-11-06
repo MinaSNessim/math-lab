@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bertrand's box paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Bertrand's box paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">paradox · traps · doors</p>
+      <h1>Bertrand's box paradox</h1>
+      <p class="lead">A gold coin is showing. How often is the other side gold too?</p>
+      <section class="stage">
+        <p class="ice-intro">A gold coin is showing. How often is the other side gold too?</p>
+        <div class="trio" id="boxes"></div>
+        <div class="face-up" id="draw"></div>
+        <p class="caption" id="caption">Three boxes. One coin is drawn. Only a gold coin on the table counts.</p>
+        <div class="controls guess">
+          <label class="field">Other coin is gold <input id="guess" type="range" min="0" max="100" value="50" /> <b id="guess-label">50%</b></label>
+          <button type="button" class="btn" id="lock">Lock guess</button>
+          <span class="guess-note" id="guess-note">Lock a share, then draw.</span>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn ghost" id="rule-faces">Count the gold faces</button>
+          <button type="button" class="btn ghost" id="rule-boxes">Drop the silver box</button>
+          <button type="button" class="btn" id="once">Draw a gold coin</button>
+          <label class="field">Draws <input class="count" id="count" type="number" min="1" max="20000" value="600" /></label>
+          <button type="button" class="btn coral" id="run" disabled>Run many draws</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="this-draw">—</b><span>This other coin</span></div>
+          <div class="stat"><b id="sim">—</b><span>Draws where the other coin was gold</span></div>
+          <div class="stat"><b id="theory">—</b><span>Long-run share for this rule</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The boxes are gold-gold, gold-silver, and silver-silver. Each box is equally likely, and so is each coin inside the box you picked.</p>
+        <p>A gold coin on the table is one of three gold faces. Two of those faces have gold on the other side.</p>
+        <p class="spoiler" hidden>Counting faces, the other coin is gold about 2 in 3 draws. Dropping the silver box and treating the other two boxes as equal lands near 1 in 2.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/bertrand-box.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

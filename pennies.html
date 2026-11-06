@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matching pennies · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Matching pennies">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Matching pennies | Zero-sum -->
+      <p class="kicker">games</p>
+      <h1>Matching pennies</h1>
+      <p class="lead">One of you wins when the coins match. The other wins when they do not.</p>
+      <section class="stage playboard" id="board">
+        <p class="ice-intro">Each player shows Heads or Tails. You win if the two coins match. The other player wins if they differ. One of you wins the round, and the other loses it. You can play again and again. The score is how many rounds each of you has won here.</p>
+        <p class="ask-line">Choose Heads or Tails.</p>
+      </section>
+      <div class="notes">
+        <p>No one face is always best. If you always show Heads, the other player can show Tails and win.</p>
+        <p>Once your face is settled, the other player wins by showing the opposite of what you expect.</p>
+        <p>The stable way to play is Heads on 50% of rounds and Tails on 50%.</p>
+        <p>Any pattern the other player can predict, they can beat.</p>
+      </div>
+    </article>
+  <script src="js/shelf.js"></script>
+  <script src="js/pennies.js"></script>
+  </div>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

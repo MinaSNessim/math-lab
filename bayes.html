@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bayes' theorem · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Bayes' theorem">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Bayes' theorem | Shannon information | Hempel's ravens | Confirmation paradox | Grue -->
+      <p class="kicker">information · rates</p>
+      <h1>Bayes' theorem</h1>
+      <p class="lead">A test says this person is ill. How often is that person really ill?</p>
+      <section class="stage">
+        <p class="ice-intro">A test says this person is ill. Of the people it calls ill, how many are really ill?</p>
+        <div class="bayes-pies">
+          <figure class="bayes-pie-card">
+            <div class="bayes-pie" id="pie-catch" role="img">
+              <b id="catch-label">90%</b>
+            </div>
+            <figcaption>Of the people who are ill, this is the share the test catches.</figcaption>
+          </figure>
+          <figure class="bayes-pie-card">
+            <div class="bayes-pie is-answer" id="pie-real" role="img" style="--share: 0">
+              <b id="real-label">—</b>
+            </div>
+            <figcaption>Of the people the test calls ill, this is the share who are really ill. Coral is people who are well.</figcaption>
+          </figure>
+        </div>
+        <p class="caption" id="caption"></p>
+        <div class="controls" id="guess-row">
+          <span class="guess-note" id="guess-note">Of the people the test calls ill, what share are really ill?</span>
+          <button type="button" class="btn ghost" data-guess="90">90%</button>
+          <button type="button" class="btn ghost" data-guess="60">60%</button>
+          <button type="button" class="btn ghost" data-guess="10">10%</button>
+        </div>
+        <div class="controls">
+          <label class="bayes-field">How many of the 100 are ill
+            <input id="ill" type="range" min="1" max="90" value="10" />
+            <b id="ill-label">10</b>
+          </label>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn ghost" id="room-10">Show 10 of 100 people ill</button>
+          <button type="button" class="btn ghost" id="room-40">Show 40 of 100 people ill</button>
+        </div>
+        <div class="bayes-board" id="board"></div>
+        <div class="readout">
+          <div class="stat"><b id="start">10 of 100</b><span>People who are ill before any test</span></div>
+          <div class="stat"><b id="column">—</b><span>Of the people the test calls ill, the share who are really ill</span></div>
+          <div class="stat"><b id="split">—</b><span>Ill people plus well people the test calls ill</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p><b>The mix-up.</b> Two questions sound alike. Of the people who are ill, how many does the test catch? And of the people the test calls ill, how many are really ill?</p>
+        <p class="spoiler" hidden><b>The people.</b> With 10 of 100 ill, the test catches 9 ill people and also calls 6 well people ill.</p>
+        <p class="spoiler" hidden><b>The 90%.</b> 9 of 10 is 90%, and that answers how many ill people the test catches, not how many called-ill people are really ill.</p>
+        <p class="spoiler" hidden><b>The calculation.</b> 9 ill and 6 well are 15 people the test calls ill, and 9 of those 15 is 60%.</p>
+        <p class="spoiler" hidden><b>When 40 of the 100 are ill.</b> 36 of the 40 called ill are really ill, which is 90%, because fewer well people were left to flag.</p>
+        <p><b>A rare note.</b> Shannon information is how much that news surprises you. Most days are sunny, so a note that says sun tells you what you already thought. Rain is the unusual day, and that message carries the surprise. A sure message carries none.</p>
+        <p><b>A red shoe.</b> Hempel's ravens, also called the confirmation paradox, asks what should count. "All ravens are black" can be read as "a thing that is not black is not a raven." A red shoe fits that reading. It is a very small piece of evidence about birds.</p>
+        <p><b>Green so far.</b> Grue is a second word that fits the same emeralds. Green means green at any time. Grue means green before a future date, and blue after that date. Every emerald seen so far fits both words. They disagree about the next one.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/bayes.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why your line is slower · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Why your line is slower">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Why your line is slower | Little's law -->
+      <p class="kicker">fairness · social · traps</p>
+      <h1>Why your line is slower</h1>
+      <p class="lead">The other lines look faster because you are stuck in this one.</p>
+      <section class="stage playboard" id="board">
+        <p class="ice-intro">You pick a checkout line at random. Other lines finish faster more often than yours does. This can happen even when all lines are identical.</p>
+        <p class="ask-line">Stand in a random line. Watch how often another line empties first.</p>
+      </section>
+      <div class="notes">
+        <p>There are more other lines than the one you are in.</p>
+        <p>Even if every line has the same average speed, the chance that at least one of the others is faster on this trip is greater than half.</p>
+        <p>Your memory also keeps the times you waited longer more vividly.</p>
+        <p>The feeling that you always pick the slow line is often the arithmetic of several lines, plus selective memory.</p>
+      </div>
+    </article>
+    <script src="js/shelf.js"></script>
+    <script src="js/line.js"></script>
+  </div>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

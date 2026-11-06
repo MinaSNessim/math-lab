@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conjunction fallacy · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Conjunction fallacy">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">traps · paradox</p>
+      <h1>Conjunction fallacy</h1>
+      <p class="lead">Extra details can make a story feel more likely than it is.</p>
+      <section class="stage">
+        <p class="ice-intro">Which is more likely: the short story, or the short story plus an extra detail?</p>
+        <p class="row-label">Bank teller</p>
+        <div class="pile" id="tellers"></div>
+        <p class="row-label">Bank teller, and in the club</p>
+        <div class="pile" id="both"></div>
+        <p class="caption" id="caption">A coral outline is in the club. That person is already in the teller row.</p>
+        <div class="controls guess">
+          <button type="button" class="btn ghost" id="guess-long">The longer story fits more people</button>
+          <button type="button" class="btn ghost" id="guess-teller">Bank teller fits more people</button>
+          <button type="button" class="btn ghost" id="guess-same">The two stories match</button>
+          <span class="guess-note" id="guess-note">Lock a guess, then fill the rooms.</span>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn ghost" id="rule-rare">The club is uncommon</button>
+          <button type="button" class="btn ghost" id="rule-all">Every teller is in the club</button>
+          <button type="button" class="btn" id="once">Fill one room</button>
+          <label class="field">Rooms <input class="count" id="count" type="number" min="1" max="20000" value="400" /></label>
+          <button type="button" class="btn coral" id="run" disabled>Run many rooms</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="this-room">—</b><span>This room, teller · both</span></div>
+          <div class="stat"><b id="sim">—</b><span>Rooms where the longer story was ahead</span></div>
+          <div class="stat"><b id="theory">—</b><span>What the longer story can do</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Anyone who is a teller and in the club is already a teller.</p>
+        <p>The longer description picks out a piece of the shorter one. It does not pick out a bigger piece.</p>
+        <p class="spoiler" hidden>The longer story was never ahead. When every teller is in the club, the two counts match. Otherwise the teller row is the bigger one.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/conjunction.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

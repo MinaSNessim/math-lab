@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unexpected hanging · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Unexpected hanging">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Unexpected hanging paradox | Surprise test -->
+      <p class="kicker">logic · paradox</p>
+      <h1>Unexpected hanging</h1>
+      <p class="lead">The surprise disappears the moment the last day is impossible.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">A judge announces: “You will be hanged on one day next week, and you will not know which day until that morning.”</p>
+        <div class="week">
+          <div class="week-ropes" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <svg class="week-rope" viewBox="0 0 36 28">
+              <path d="M14 3 V12 Q14 22 24 20" stroke="#fe8e83" stroke-width="4" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="week-row" id="week">
+            <div class="week-day" id="day-0"><img src="images/page.png" alt="">Mon</div>
+            <div class="week-day" id="day-1"><img src="images/page.png" alt="">Tue</div>
+            <div class="week-day" id="day-2"><img src="images/page.png" alt="">Wed</div>
+            <div class="week-day" id="day-3"><img src="images/page.png" alt="">Thu</div>
+            <div class="week-day" id="day-4"><img src="images/page.png" alt="">Fri</div>
+          </div>
+        </div>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="think" data-pace="400">Think from the end</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>If it cannot be Friday, then it cannot be Thursday, and so on. Every day is ruled out by logic.</p>
+        <p>Yet the hanging can still happen. The announcement makes the deduction defeat itself.</p>
+        <p>A surprise test is the same week, told as a quiz.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/hanging.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

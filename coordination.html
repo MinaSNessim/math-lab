@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coordination game · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Coordination game">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">games</p>
+      <h1>Coordination game</h1>
+      <p class="lead">Both of you want to pick the same side.</p>
+      <section class="stage playboard" id="board">
+        <p class="ice-intro">Both players want to choose the same option. If you both pick Left, you both win. If you both pick Right, you both win. If you pick different sides, you both get nothing. Either match works. The two matches pay the same.</p>
+        <p class="ask-line">Can you both pick the same thing?</p>
+      </section>
+      <div class="notes">
+        <p>You both win only when you pick the same side, and you both get nothing when you miss.</p>
+        <p>Two results stay put: both Left, or both Right. Switching alone turns a win into nothing.</p>
+        <p>A shared habit, an obvious meeting place, or a chance to talk can decide which side you both pick.</p>
+        <p>The hard part is agreeing on the same choice. You are not trying to beat each other.</p>
+      </div>
+    </article>
+  <script src="js/shelf.js"></script>
+  <script src="js/coordination.js"></script>
+  </div>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

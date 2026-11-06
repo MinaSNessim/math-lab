@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gambler's fallacy · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Gambler's fallacy">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">counting · paradox</p>
+      <h1>Gambler's fallacy</h1>
+      <p class="lead">A long run of heads. Is the next flip due? That feeling is the gambler's fallacy.</p>
+      <section class="stage">
+        <p class="ice-intro">A long run of heads. Is the next flip due?</p>
+        <p class="row-label">Your flips</p>
+        <div class="flips" id="flips"></div>
+        <p class="row-label" id="trial-label" hidden>One trial: the streak, then the next coin</p>
+        <div class="flips" id="trial" hidden></div>
+        <p class="caption" id="caption">Flip the coin yourself. A smile is heads and a star is tails. The trial row stays separate.</p>
+        <div class="controls guess">
+          <span class="field">After that streak, the next flip is</span>
+          <button type="button" class="btn ghost" id="guess-more">Heads more often</button>
+          <button type="button" class="btn ghost" id="guess-half">About half</button>
+          <button type="button" class="btn ghost" id="guess-less">Tails more often</button>
+          <span class="guess-note" id="guess-note">Lock a guess, then run the next flip.</span>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn" id="flip">Flip once</button>
+          <button type="button" class="btn ghost" id="clear">Clear the row</button>
+          <label class="field">After <input class="count" id="streak" type="number" min="2" max="12" value="5" /> heads</label>
+          <label class="field">Trials <input class="count" id="count" type="number" min="1" max="20000" value="1000" /></label>
+          <button type="button" class="btn coral" id="run" disabled>Run the next flip</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="live">0</b><span>Current heads streak</span></div>
+          <div class="stat"><b id="next-heads">—</b><span>Next flip was heads, after that streak</span></div>
+          <div class="stat"><b id="next-tails">—</b><span>Next flip was tails, after that streak</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Each flip is its own event. A fair coin stays at one half, whatever the row so far shows.</p>
+        <p>A long run of heads is uncommon, and it does not use up the heads.</p>
+        <p>After five heads in a row, the next flip is still heads about half the time. The same is true after any fixed streak.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/streaks.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

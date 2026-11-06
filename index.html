@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <script>
+    try {
+      if (localStorage.getItem("gym-cards") === "small") document.documentElement.classList.add("is-compact");
+    } catch (err) {}
+  </script>
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <h1 class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </h1>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html" aria-current="page">Home</a>
+        <button type="button" id="nav-how" aria-expanded="false" aria-controls="panel-how">How it works</button>
+        <button type="button" id="nav-about" aria-expanded="false" aria-controls="panel-about">About me</button>
+      </nav>
+    </header>
+
+    <div class="how" id="panel-how" hidden>
+      <p>Each card is a short interactive experiment.</p>
+      <ol class="steps">
+        <li>Pick a paradox or idea</li>
+        <li>Play with the small interactive</li>
+        <li>See why your first intuition is often wrong</li>
+        <li>Read the short explanation</li>
+      </ol>
+      <p>Everything is designed to be simple: small numbers, clear visuals, and one clear “aha” moment.</p>
+      <p>No accounts needed. Just explore.</p>
+    </div>
+    <div class="how" id="panel-about" hidden>
+      <p>Hi, I’m Mina Nessim.</p>
+      <p>I built CounterMath Lab to explore mathematical ideas that feel wrong at first — paradoxes, fallacies, and counterintuitive results — through small interactive experiments.</p>
+      <ul class="about-links">
+        <li><a href="https://www.minanessim.me/">Website</a></li>
+        <li><a href="https://www.youtube.com/@minanessim">YouTube</a></li>
+        <li><a href="https://linkedin.com/in/mina-nessim">LinkedIn</a></li>
+        <li><a href="https://github.com/MinaSNessim">GitHub</a></li>
+      </ul>
+    </div>
+
+    <div class="finder">
+    <form class="search" role="search" onsubmit="return false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.2" fill="none" stroke="#1a1a1a" stroke-width="1.6"/>
+        <path d="M15.8 15.8L20 20" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input id="q" type="search" placeholder="Search activities..." aria-label="Search activities" />
+      <button class="filter-btn" id="filter-btn" type="button" aria-expanded="false" aria-controls="filters" aria-label="Show filters">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+          <circle cx="9" cy="7" r="2.15" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+          <circle cx="15" cy="12" r="2.15" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+          <circle cx="11" cy="17" r="2.15" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </button>
+    </form>
+
+    <div class="tags" id="filters" aria-label="Tags" hidden>
+      <div class="tag-set">
+        <button type="button" class="is-pick" data-tag="pick"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="solid" d="M8 1.4l1.6 3.6 3.9.4-2.9 2.6.8 3.8L8 10.2 4.6 12l.8-3.8L2.5 5.4l3.9-.4z"/></svg>Top picks</button>
+        <span class="tag-sep" aria-hidden="true"></span>
+        <button type="button" class="is-beginner" data-tag="beginner"><svg viewBox="0 0 16 16" aria-hidden="true"><circle class="solid" cx="8" cy="8" r="3.1"/></svg>Beginner</button>
+        <button type="button" data-tag="intermediate"><svg viewBox="0 0 16 16" aria-hidden="true"><circle class="solid" cx="5" cy="8" r="2.6"/><circle class="solid" cx="11" cy="8" r="2.6"/></svg>Intermediate</button>
+        <button type="button" class="is-advanced" data-tag="advanced"><svg viewBox="0 0 16 16" aria-hidden="true"><circle class="solid" cx="3.1" cy="8" r="2.15"/><circle class="solid" cx="8" cy="8" r="2.15"/><circle class="solid" cx="12.9" cy="8" r="2.15"/></svg>Advanced</button>
+      </div>
+      <div class="tag-set">
+        <button type="button" data-tag="paradox"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 8c1.05-1.7 1.85-2.7 3.05-2.7 1.45 0 2.35 1.2 2.35 2.7S12.5 10.7 11.05 10.7C9.85 10.7 9.05 9.7 8 8 6.95 9.7 6.15 10.7 4.95 10.7 3.5 10.7 2.6 9.5 2.6 8S3.5 5.3 4.95 5.3C6.15 5.3 6.95 6.3 8 8z" fill="none" stroke="currentColor" stroke-width="1.35"/></svg>paradox</button>
+        <button type="button" data-tag="doors"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="solid" fill-rule="evenodd" d="M4 13.6V6.2a4 4 0 0 1 8 0v7.4H4zm5.6-5.1a.9.9 0 1 0 .1 1.8.9.9 0 0 0-.1-1.8z"/></svg>doors</button>
+        <button type="button" data-tag="counting"><svg viewBox="0 0 16 16" aria-hidden="true"><rect class="solid" x="2.2" y="3" width="2.4" height="10" rx="1.1"/><rect class="solid" x="6.8" y="3" width="2.4" height="10" rx="1.1"/><rect class="solid" x="11.4" y="3" width="2.4" height="10" rx="1.1"/></svg>counting</button>
+        <button type="button" data-tag="rates"><svg viewBox="0 0 16 16" aria-hidden="true"><rect class="solid" x="1.8" y="8.2" width="2.5" height="5.2" rx="0.7"/><rect class="solid" x="6.1" y="5.4" width="2.5" height="8" rx="0.7"/><rect class="solid" x="10.4" y="2.6" width="2.5" height="10.8" rx="0.7"/></svg>rates</button>
+        <button type="button" data-tag="trap"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.4V8.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="5" r="2.6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>traps</button>
+        <button type="button" data-tag="stats"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.2 12.2c1.6-.4 2.6-6.4 5.8-6.4s4.2 6 5.8 6.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M2.2 12.4h11.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>statistics</button>
+        <button type="button" data-tag="games"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="solid" d="M3.2 6.2h9.6c1.2 0 2.1 1.15 1.85 2.35l-.6 2.15a1.6 1.6 0 0 1-1.55 1.15h-.5c-.5 0-.95-.28-1.15-.75L10.1 9.6H5.9l-.75 1.5c-.2.47-.65.75-1.15.75h-.5a1.6 1.6 0 0 1-1.55-1.15l-.6-2.15C1.1 7.35 2 6.2 3.2 6.2z"/></svg>games</button>
+        <button type="button" data-tag="voting"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2.6" width="10" height="11" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.35"/><path d="M3 6h10" stroke="currentColor" stroke-width="1.3"/><path d="M5.6 9.6l1.5 1.5 3-3.1" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>voting</button>
+        <button type="button" data-tag="decisions"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.4V7.5M8 7.5C8 5 4.2 4.2 3.4 2.4M8 7.5C8 5 11.8 4.2 12.6 2.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>decisions</button>
+        <button type="button" data-tag="logic"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="solid" d="M6.1 1.7a1.55 1.55 0 0 1 3 .6h2.6v3.2a1.55 1.55 0 1 1 0 3V13H8.6a1.55 1.55 0 1 1-3 0H2.4V8.2h.8a1.55 1.55 0 1 0 0-3h-.8V2.3h3.7z"/></svg>logic</button>
+        <button type="button" data-tag="cause"><svg viewBox="0 0 16 16" aria-hidden="true"><circle class="solid" cx="3.5" cy="8" r="2.2"/><path class="solid" d="M6.2 6.7h4.2V4.6L14 8l-3.6 3.4V9.3H6.2z"/></svg>cause</button>
+        <button type="button" data-tag="fairness"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.6v9.2M3.2 13.2h9.6M2.6 5h10.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M2.6 5 4.6 8.6H1.2zM13.4 5 15.2 8.6h-3.6z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>fairness</button>
+        <button type="button" data-tag="info"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.3" fill="none" stroke="currentColor" stroke-width="1.35"/><path d="M8 7.2v3.6" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/><circle cx="8" cy="5.1" r="0.8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>information</button>
+        <button type="button" data-tag="social"><svg viewBox="0 0 16 16" aria-hidden="true"><circle class="solid" cx="4.3" cy="5" r="1.7"/><circle class="solid" cx="11.7" cy="5" r="1.7"/><circle class="solid" cx="8" cy="4.2" r="1.9"/><path class="solid" d="M1.8 12.4c.5-2.2 1.6-3.1 2.5-3.1s2 .9 2.5 3.1zM9.2 12.4c.5-2.2 1.6-3.1 2.5-3.1s2 .9 2.5 3.1z"/></svg>social</button>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="catalog-bar">
+      <p class="catalog-lead">One idea, one story, one twist.</p>
+      <div class="card-view" role="group" aria-label="Card size">
+        <button type="button" id="view-full" aria-pressed="true">Full cards</button>
+        <button type="button" id="view-compact" aria-pressed="false" title="Point at a card. A full card opens beside it.">Small cards</button>
+      </div>
+    </div>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>Guesses that feel right</h2>
+        <p>The chance shows up sooner, lands differently than you expected, or feels obvious once the ending is known.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="next" data-tags="pick beginner paradox doors counting info" data-text="monty hall should you switch doors when monty offers? hundred doors bayes paradox doors counting info top pick beginner">
+        <div class="art"><span class="monty-set" aria-hidden="true"><img src="images/door.png" alt=""><img src="images/goat.png" alt=""><img src="images/car.png" alt=""></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">paradox · doors · counting</p>
+        <h2>Monty Hall</h2>
+        <p>Should you switch doors when Monty offers?</p>
+        <a class="go play" href="monty-hall.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="pick beginner paradox counting trap" data-text="birthday paradox a shared day shows up sooner than you think.  paradox counting trap top pick beginner">
+        <div class="art"><span class="cast people" aria-hidden="true"><img src="images/person.png" alt=""><span class="piece share"><img src="images/person.png" alt=""><b>12</b></span><span class="piece share"><img src="images/person.png" alt=""><b>12</b></span><img src="images/person.png" alt=""></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">paradox · counting · traps</p>
+        <h2>Birthday paradox</h2>
+        <p>A shared day shows up sooner than you think.</p>
+        <a class="go play" href="birthday.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="pick beginner rates trap info" data-text="rare tests a positive test, or a rare crime, is weak if the thing itself is rare. false positive rare disease base-rate neglect prosecutor's fallacy defense attorney's fallacy bayes rates trap info top pick beginner base rate fallacy base rate vs the prosecutor how rare the thing is, set beside how rare a match would be if they were innocent. prosecutor's fallacy base-rate neglect compare rates info intermediate prosecutor's fallacy monty hall vs a rare test both are an update after someone shows you a door, or a result. rare disease compare info doors intermediate monty hall vs the base rate monty hall vs the base rate">
+        <div class="art"><span class="cast crowd" aria-hidden="true"><span class="piece plus"><img src="images/person.png" alt=""><b>+</b></span><span class="piece plus"><img src="images/person.png" alt=""><b>+</b></span><span class="piece plus"><img src="images/person.png" alt=""><b>+</b></span><span class="piece plus"><img src="images/person.png" alt=""><b>+</b></span><img src="images/person.png" alt=""></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">rates · traps · information</p>
+        <h2>Base rate fallacy</h2>
+        <p>A positive test, or a rare crime, is weak if the thing itself is rare.</p>
+        <a class="go play" href="base-rate.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate paradox trap" data-text="boy or girl paradox the sentence you used already changed the sample. tuesday boy paradox trap intermediate">
+        <div class="art"><span class="cast kids" aria-hidden="true"><span class="piece tue"><img src="images/boy.png" alt=""><b>Tue</b></span><img src="images/girl.png" alt=""></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">paradox · traps</p>
+        <h2>Boy or girl paradox</h2>
+        <p>The sentence you used already changed the sample.</p>
+        <a class="go play" href="boy-girl.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner paradox counting trap" data-text="streaks that are not streaks a run of heads does not owe you the next result. gambler's fallacy hot hand regression to the mean paradox counting trap beginner">
+        <div class="art"><span class="cast coins" aria-hidden="true"><img src="images/coin-heads.png" alt=""><img src="images/coin-heads.png" alt=""><img src="images/coin-heads.png" alt=""><img src="images/coin-heads.png" alt=""><img class="spin" src="images/coin-tails.png" alt=""></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">paradox · counting · traps</p>
+        <h2>Gambler's fallacy</h2>
+        <p>A run of heads does not owe you the next result.</p>
+        <a class="go play" href="streaks.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate paradox trap doors" data-text="bertrand's box a gold coin is showing. how often is the other side gold too? similar to monty hall paradox trap doors intermediate bertrand's box paradox">
+        <div class="art"><span class="cast boxes" aria-hidden="true"><span class="piece box"><img src="images/box.png" alt=""><b>GG</b></span><span class="piece box"><img src="images/box.png" alt=""><b>GS</b></span><span class="piece box"><img src="images/box.png" alt=""><b>SS</b></span><img class="drawn" src="images/coin-gold.png" alt=""></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">paradox · traps · doors</p>
+        <h2>Bertrand's box paradox</h2>
+        <p>A gold coin is showing. How often is the other side gold too?</p>
+        <a class="go play" href="bertrand-box.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner trap paradox" data-text="linda extra details can make a story feel more likely than it is. conjunction fallacy trap paradox beginner">
+        <div class="art"><span class="cast linda" aria-hidden="true"><img class="who" src="images/person.png" alt=""><span class="piece note"><img src="images/page.png" alt=""><i class="l1"></i><i class="l2"></i></span><span class="piece note long"><img src="images/page.png" alt=""><i class="l1"></i><i class="l2"></i><i class="l3"></i></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">traps · paradox</p>
+        <h2>Conjunction fallacy</h2>
+        <p>Extra details can make a story feel more likely than it is.</p>
+        <a class="go play" href="conjunction.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="advanced paradox trap decisions" data-text="two envelopes an average win can be a bad reason to switch, or to play. st petersburg two envelopes paradox trap decisions advanced">
+        <div class="art"><span class="cast mail" aria-hidden="true"><span class="piece env"><img src="images/envelope.png" alt=""><b>2</b></span><span class="piece env"><img src="images/envelope.png" alt=""><b>4</b></span><b class="more">8…</b></span></div>
+        <div class="marks"><span class="mark advanced">Advanced</span></div>
+        <p class="kicker">paradox · traps · decisions</p>
+        <h2>Two envelopes paradox</h2>
+        <p>St. Petersburg too. An average win can be a bad reason to switch, or to play.</p>
+        <a class="go play" href="two-envelopes.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="advanced paradox trap decisions" data-text="sleeping beauty paradox half, or one third? the two answers are both still in the room.  paradox trap decisions half, or one third sleeping beauty. the two answers are still both in the room. advanced">
+        <div class="art"><span class="cast beauty" aria-hidden="true"><img class="bed" src="images/bed.png" alt=""><b class="chip">1/2</b><b class="chip hot">1/3</b></span></div>
+        <div class="marks"><span class="mark advanced">Advanced</span></div>
+        <p class="kicker">paradox · traps · decisions</p>
+        <h2>Sleeping Beauty paradox</h2>
+        <p>The two answers are still both in the room.</p>
+        <a class="go play" href="sleeping-beauty.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="advanced paradox trap" data-text="bertrand paradox bertrand's random chord the fight is what the word random is doing.  paradox trap which random chord? bertrand's random chord. three fair recipes give three different answers. advanced">
+        <div class="art"><span class="cast" aria-hidden="true"><img class="chord" src="images/chord.png" alt=""></span></div>
+        <div class="marks"><span class="mark advanced">Advanced</span></div>
+        <p class="kicker">paradox · traps</p>
+        <h2>Bertrand paradox</h2>
+        <p>Three fair recipes give three different answers.</p>
+        <a class="go play" href="bertrand.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate fairness paradox trap" data-text="parrondo's paradox two losing games, alternated, can win.  fairness paradox trap two losing games that win parrondo's paradox. each game loses. switching between them can win. intermediate">
+        <div class="art"><span class="cast machines" aria-hidden="true"><span class="piece cab"><img src="images/machine.png" alt=""><b>−</b></span><span class="piece cab"><img src="images/machine.png" alt=""><b>−</b></span><span class="piece cab win"><img src="images/machine.png" alt=""><b>+</b></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">fairness · paradox · traps</p>
+        <h2>Parrondo's paradox</h2>
+        <p>Each game loses. Switching between them can win.</p>
+        <a class="go play" href="parrondo.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate fairness counting stats" data-text="benford's law in many real lists, the first digit is 1 far more often than 9.  fairness counting stats why 1 leads the numbers benford's law. in real lists, 1 is a first digit more often than 9. intermediate">
+        <div class="art"><span class="cast" aria-hidden="true"><span class="piece sheet"><img src="images/page.png" alt=""><span class="nums"><em>1</em>48<br><em>1</em>9<br><em>1</em>02<br>36<br>7</span></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">fairness · counting · statistics</p>
+        <h2>Benford's law</h2>
+        <p>In real lists, 1 is a first digit more often than 9.</p>
+        <a class="go play" href="benford.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner info rates" data-text="bayes in one table rows are the hidden truth. columns are what you saw. update after news start with a chance. multiply by how well the news fits. renormalize. bayes update info rates beginner bayesian update bayes' theorem a test says someone is ill. count everyone it says that about, not only the people who are ill. shannon information a surprise carries more than a sure thing. a rare message carries more. a sure message carries none. hempel's ravens confirmation paradox a red shoe is a little bit of evidence about black ravens. grue green so far does not promise the next one stays green.">
+        <div class="art"><span class="cast bayes" aria-hidden="true"><span class="axis"><span></span><span>ill</span><span>well</span></span><span class="col"><span class="head">+</span><span class="piece plus"><img src="images/person.png" alt=""><b>+</b></span><span class="piece"><img src="images/person.png" alt=""><b>+</b></span></span><span class="col"><span class="head">−</span><span class="piece"><img src="images/person.png" alt=""><b>−</b></span><span class="piece"><img src="images/person.png" alt=""><b>−</b></span></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">information · rates</p>
+        <h2>Bayes' theorem</h2>
+        <p>A test says someone is ill. Count everyone it says that about, not only the people who are ill.</p>
+        <a class="go play" href="bayes.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner info trap" data-text="i knew it all along after the result, the other outcome feels as if it was never likely. hindsight bias info trap obvious after you know hindsight. once the ending is known, that path feels like the only one. beginner">
+        <div class="art"><span class="cast hindsight" aria-hidden="true"><img src="images/maze.png" alt=""></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">information · traps</p>
+        <h2>Hindsight bias</h2>
+        <p>Once the ending is known, that path feels like the only one.</p>
+        <a class="go play" href="hindsight.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner paradox trap counting" data-text="missing square puzzle the same four pieces. one picture has an empty square. paradox traps trap counting beginner visual fallacy">
+        <div class="art"><svg viewBox="0 0 140 150" aria-hidden="true"><rect x="18" y="36" width="48" height="48" rx="8" fill="#5ec5a7" stroke="#0c1438" stroke-width="2.5"/><rect x="74" y="36" width="48" height="48" rx="8" fill="#fe8e83" stroke="#0c1438" stroke-width="2.5"/><rect x="18" y="92" width="48" height="48" rx="8" fill="#f5c518" stroke="#0c1438" stroke-width="2.5"/><rect x="74" y="92" width="48" height="48" rx="8" fill="#ffffff" stroke="#fe8e83" stroke-width="3" stroke-dasharray="5 4"/></svg></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">paradox · traps · counting</p>
+        <h2>Missing square puzzle</h2>
+        <p>The same four pieces. One picture has an empty square.</p>
+        <a class="go play" href="missing-square.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate trap logic" data-text="1 = 2 the steps start at 1 = 1. they seem to end at 2 = 1. division by zero traps trap logic intermediate algebraic fallacy">
+        <div class="art"><svg viewBox="0 0 140 150" aria-hidden="true"><rect x="14" y="40" width="46" height="72" rx="12" fill="#5ec5a7" stroke="#0c1438" stroke-width="2.5"/><rect x="80" y="40" width="46" height="72" rx="12" fill="#fe8e83" stroke="#0c1438" stroke-width="2.5"/><text x="37" y="88" text-anchor="middle" font-size="40" font-family="Nunito,sans-serif" font-weight="800" fill="#0c1438">1</text><text x="103" y="88" text-anchor="middle" font-size="40" font-family="Nunito,sans-serif" font-weight="800" fill="#0c1438">2</text><rect x="61" y="74" width="18" height="6" rx="2" fill="#f5c518"/><rect x="61" y="88" width="18" height="6" rx="2" fill="#f5c518"/></svg></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">traps · logic</p>
+        <h2>1 = 2</h2>
+        <p>The steps start at 1 = 1. They seem to end at 2 = 1.</p>
+        <a class="go play" href="one-equals-two.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>The cases you happened to see</h2>
+        <p>A special case is easy to take for the whole story.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="beginner rates trap" data-text="why your wait was long you did not sample the gaps the way you think you did. inspection paradox waiting time average of averages rates trap beginner inspection queues the queue you audit is the one that was long enough to notice. fairness trap intermediate length-biased sampling length-biased sampling selection bias the people who show up are already a tilted sample. stats cause beginner selection bias">
+        <div class="art"><span class="cast inspect" aria-hidden="true"><img class="bus" src="images/bus.png" alt=""><i class="pip"></i><span class="wait"><img src="images/person.png" alt=""><i class="long"></i></span><i class="pip"></i><img class="bus" src="images/bus.png" alt=""></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">rates · traps</p>
+        <h2>Inspection paradox</h2>
+        <p>You did not sample the gaps the way you think you did.</p>
+        <a class="go play" href="inspection.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner paradox trap social" data-text="friendship paradox your friends have more friends than you do.  paradox trap social beginner">
+        <div class="art"><span class="cast friends" aria-hidden="true"><span class="piece you"><img src="images/person.png" alt=""></span><span class="pod"><span class="pals"><img src="images/person.png" alt=""><img src="images/person.png" alt=""><img src="images/person.png" alt=""></span><img class="hub" src="images/person.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">paradox · traps · social</p>
+        <h2>Friendship paradox</h2>
+        <p>Your friends have more friends than you do.</p>
+        <a class="go play" href="friendship.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate stats trap cause" data-text="berkson and will rogers the group you put people into can fake an improvement. berkson's paradox will rogers phenomenon stats trap cause intermediate low birth weight paradox a risk factor can look protective once you condition on the harm. stats cause intermediate low birth weight paradox collider bias conditioning on a shared effect can invent a link. stats cause the filter that fakes a link collider bias. keeping only the cases that passed a filter can invent a connection. advanced collider bias">
+        <div class="art"><span class="cast berk" aria-hidden="true"><img class="out" src="images/person.png" alt=""><img class="door" src="images/door.png" alt=""><span class="ward"><img src="images/person.png" alt=""><img src="images/person.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">statistics · traps · cause</p>
+        <h2>Berkson's paradox</h2>
+        <p>Will Rogers too. The group you put people into can fake an improvement.</p>
+        <a class="go play" href="berkson.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="pick beginner stats cause" data-text="survivorship bias you are looking at the ones that lasted.  stats cause top pick beginner">
+        <div class="art"><span class="cast survive" aria-hidden="true"><span class="piece plane"><img src="images/plane-holes.png" alt=""></span><span class="gone"><img src="images/plane.png" alt=""><i class="x"></i></span></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">statistics · cause</p>
+        <h2>Survivorship bias</h2>
+        <p>You are looking at the ones that lasted.</p>
+        <a class="go play" href="survivorship.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate stats cause" data-text="missing data the gaps are not a random sprinkle. missing not at random stats cause intermediate">
+        <div class="art"><span class="cast missing" aria-hidden="true"><span class="piece note"><img src="images/page.png" alt=""><i class="ln l1"></i><i class="ln l2"></i><i class="ln l3"></i><i class="blank b1"></i><i class="blank b2"></i><i class="blank b3"></i></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">statistics · cause</p>
+        <h2>Missing not at random</h2>
+        <p>The gaps are not a random sprinkle.</p>
+        <a class="go play" href="missing.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner fairness social trap" data-text="why your line is slower the other lines look faster because you are stuck in this one.  fairness social trap beginner little's law people in the shop are arrivals times how long each person stays. four an hour, fifteen minutes, one person in the shop.">
+        <div class="art"><span class="cast queues" aria-hidden="true"><span class="lane"><img src="images/person.png" alt=""><img src="images/person.png" alt=""><span class="piece you"><img src="images/person.png" alt=""></span></span><span class="lane open"><img src="images/person.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">fairness · social · traps</p>
+        <h2>Why your line is slower</h2>
+        <p>The other lines look faster because you are stuck in this one.</p>
+        <a class="go play" href="line.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner social stats" data-text="why the popular paper is cited more being cited makes the next reader more likely to cite it.  social stats beginner matthew effect">
+        <div class="art"><span class="cast cites" aria-hidden="true"><span class="pile"><img src="images/page.png" alt=""><img src="images/page.png" alt=""></span><i class="arrow"></i><span class="piece note hot"><img src="images/page.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">social · statistics</p>
+        <h2>Matthew effect</h2>
+        <p>Being cited makes the next reader more likely to cite it.</p>
+        <a class="go play" href="matthew.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>When the groups and the total disagree</h2>
+        <p>Every group can fall while the total still rises.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="pick beginner stats rates cause" data-text="simpson's paradox better in each group. together it flips. simpson confounding groups stats rates cause top pick beginner when every group falls each rate drops, and the total still rises. why a total can rise while every group falls stats intermediate when every group falls mixing different sizes a large mild group and a small severe one swap the average. stats beginner mixing different sizes simpson vs berkson mixing groups can flip a rate. selecting into a group can invent one. compare stats cause intermediate simpson vs berkson simpson vs confounding same picture of mixed groups. the story of why can differ. stats cause compare intermediate simpson vs confounding">
+        <div class="art"><span class="cast simpson" aria-hidden="true"><span class="split"><span class="grp"><span class="piece ok"><img src="images/person.png" alt=""></span><span class="piece sev"><img src="images/person.png" alt=""></span></span><span class="grp"><span class="piece ok"><img src="images/person.png" alt=""></span><span class="piece sev"><img src="images/person.png" alt=""></span></span></span><i class="arrow"></i><span class="grp"><span class="piece sev lead"><img src="images/person.png" alt=""></span><img src="images/person.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">statistics · rates · cause</p>
+        <h2>Simpson's paradox</h2>
+        <p>Better in each group. Together it flips.</p>
+        <a class="go play" href="simpson.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate stats cause" data-text="lord's paradox the same students, two fair comparisons, two answers.  stats cause same students, two stories lord's paradox. one class, and two ways of reading the gain. intermediate">
+        <div class="art"><span class="cast lord" aria-hidden="true"><span class="pupil"><img src="images/person.png" alt=""><span class="stack"><i class="gain"></i><i class="base"></i></span></span><span class="pupil"><img src="images/person.png" alt=""><span class="stack"><i class="gain"></i><i class="base tall"></i></span></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">statistics · cause</p>
+        <h2>Lord's paradox</h2>
+        <p>One class, and two ways of reading the gain.</p>
+        <a class="go play" href="lord.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate stats cause" data-text="ecological fallacy a pattern in the counties need not be a pattern in the people.  stats cause the group is not the person ecological fallacy. a pattern in the average can be false for each person. intermediate">
+        <div class="art"><span class="cast eco" aria-hidden="true"><span class="piece avg"><img src="images/person.png" alt=""><b><i class="chev up"></i></b></span><span class="folks"><span class="piece "><img src="images/person.png" alt=""><b><i class="chev"></i></b></span><span class="piece "><img src="images/person.png" alt=""><b><i class="chev"></i></b></span><span class="piece "><img src="images/person.png" alt=""><b><i class="chev"></i></b></span></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">statistics · cause</p>
+        <h2>Ecological fallacy</h2>
+        <p>A pattern in the average can be false for each person.</p>
+        <a class="go play" href="ecological.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner social fairness stats" data-text="a fair rule, an unfair total everyone is treated by the same rule, and the pile at the end is still lopsided.  social fairness stats beginner">
+        <div class="art"><span class="cast fairrule" aria-hidden="true"><span class="same"><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""></span><i class="arrow"></i><span class="stacks"><span class="stack"><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""></span><span class="stack"><img src="images/coin-gold.png" alt=""></span></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">social · fairness · statistics</p>
+        <h2>A fair rule, an unfair total</h2>
+        <p>Everyone is treated by the same rule, and the pile at the end is still lopsided.</p>
+        <a class="go play" href="fair-rule.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate paradox counting" data-text="gabriel's horn the inside of each slice gets small. the skin still adds. paradox counting intermediate gabriel horn paint">
+        <div class="art"><svg viewBox="0 0 140 150" aria-hidden="true"><path d="M14 78 L14 42 L42 50 L70 56 L98 62 L126 68 L126 88 L98 94 L70 100 L42 106 L14 114 Z" fill="#f5c518" stroke="#0c1438" stroke-width="2.5" stroke-linejoin="round"/><path d="M18 76 L18 50 L36 56 L36 104 Z" fill="#5ec5a7" stroke="#fe8e83" stroke-width="2.5" stroke-linejoin="round"/><path d="M42 50 V106 M70 56 V100 M98 62 V94" stroke="#0c1438" stroke-width="2.5"/></svg></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">paradox · counting</p>
+        <h2>Gabriel's horn</h2>
+        <p>The inside of each slice gets small. The skin still adds.</p>
+        <a class="go play" href="horn.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>Two people each make a choice</h2>
+        <p>The result is the pair of picks, so your best pick depends on theirs.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="pick beginner games paradox" data-text="prisoner's dilemma each of you does better by defecting. together you both lose. cooperate defect games paradox top pick beginner prisoner's dilemma in traffic cutting in helps you and slows the lane. games social beginner prisoner's dilemma in traffic prisoner's dilemma in pricing each shop wants to undercut. both shops then earn less. games social beginner prisoner's dilemma in pricing prisoner's dilemma in doping the edge is real, and so is the cost if everyone takes it. exams doping games social the edge everyone takes prisoner's dilemma in doping, or on an exam. the edge is real, and costly if everyone takes it. beginner prisoner's dilemma in doping dominant strategy one move is better for you no matter what they pick. games better no matter what dominant strategy. one move is better for you no matter what they pick. beginner dominant strategy prisoner's dilemma vs chicken in one game the disaster is mutual betrayal. in the other it is mutual stubbornness. compare games intermediate prisoner's dilemma vs chicken">
+        <div class="art"><span class="cast pd" aria-hidden="true"><span class="player"><img src="images/person.png" alt=""><img class="coin" src="images/coin-heads.png" alt=""></span><i class="crash"></i><span class="player"><img src="images/person.png" alt=""><img class="coin" src="images/coin-heads.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games · paradox</p>
+        <h2>Prisoner's dilemma</h2>
+        <p>Each of you does better by defecting. Together you both lose.</p>
+        <a class="go play" href="dilemma.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner games" data-text="chicken swerving is safe. if you both refuse, you both crash.  games who swerves? game of chicken. swerving is safe. if you both refuse, you both crash. beginner">
+        <div class="art"><span class="cast chicken" aria-hidden="true"><img src="images/car.png" alt=""><i class="crash"></i><img src="images/car.png" alt=""></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games</p>
+        <h2>Game of chicken</h2>
+        <p>Swerving is safe. If you both refuse, you both crash.</p>
+        <a class="go play" href="chicken.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate games" data-text="stag hunt the big prize needs both of you. the small one you can take alone.  games the stag needs you both stag hunt. the big prize needs both of you. the hare you can take alone. intermediate">
+        <div class="art"><span class="cast hunt" aria-hidden="true"><span class="party"><span class="pals"><img src="images/person.png" alt=""><img src="images/person.png" alt=""></span><img class="stag" src="images/stag.png" alt=""></span><span class="party alone"><img src="images/person.png" alt=""><img class="hare" src="images/hare.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">games</p>
+        <h2>Stag hunt</h2>
+        <p>The big prize needs both of you. The hare you can take alone.</p>
+        <a class="go play" href="stag.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="pick intermediate games" data-text="nash equilibrium a pair of choices neither of you wants to leave. nash equilibrium in one picture games a spot nobody leaves nash equilibrium. a pair of choices neither of you wants to leave. top pick intermediate">
+        <div class="art"><span class="cast nash" aria-hidden="true"><span class="spot"><img src="images/person.png" alt=""><img src="images/person.png" alt=""></span><img class="away" src="images/door.png" alt=""></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">games</p>
+        <h2>Nash equilibrium</h2>
+        <p>A pair of choices neither of you wants to leave.</p>
+        <a class="go play" href="nash.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate games" data-text="mixed strategy the idea only: sometimes the best plan is a deliberate coin flip.  games flip on purpose mixed strategy. sometimes the best plan is a coin flip you meant. intermediate">
+        <div class="art"><span class="cast mixed" aria-hidden="true"><img src="images/person.png" alt=""><img class="spin" src="images/coin-heads.png" alt=""></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">games</p>
+        <h2>Mixed strategy</h2>
+        <p>Sometimes the best plan is a coin flip you meant.</p>
+        <a class="go play" href="mixed.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner games" data-text="coordination game you both win if you pick the same thing, and lose if you miss.  games pick the same one coordination. you both win if you pick the same thing, and lose if you miss. beginner">
+        <div class="art"><span class="cast coord" aria-hidden="true"><span class="match"><img src="images/person.png" alt=""><img class="pick" src="images/coin-heads.png" alt=""></span><span class="match"><img src="images/person.png" alt=""><img class="pick" src="images/coin-heads.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games</p>
+        <h2>Coordination game</h2>
+        <p>You both win if you pick the same thing, and lose if you miss.</p>
+        <a class="go play" href="coordination.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner games" data-text="battle of the sexes you want to be together, and you want different nights.  games together, different nights battle of the sexes. you want the same evening, and different plans. beginner">
+        <div class="art"><span class="cast sexes" aria-hidden="true"><span class="date"><img src="images/boy.png" alt=""><img class="plan" src="images/page.png" alt=""></span><span class="date"><img src="images/girl.png" alt=""><img class="plan" src="images/coin-gold.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games</p>
+        <h2>Battle of the sexes</h2>
+        <p>You want the same evening, and different plans.</p>
+        <a class="go play" href="battle.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner games" data-text="matching pennies one of you wins when the coins match. the other wins when they do not.  games match the penny matching pennies. one of you wins when the coins match. the other wins when they do not. beginner zero-sum your gain is their loss. add the two results and you get zero. non-zero-sum">
+        <div class="art"><span class="cast pennies" aria-hidden="true"><span class="piece win"><img src="images/person.png" alt=""></span><img class="coin" src="images/coin-heads.png" alt=""><img class="coin" src="images/coin-tails.png" alt=""><span class="piece lose"><img src="images/person.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games</p>
+        <h2>Matching pennies</h2>
+        <p>One of you wins when the coins match. The other wins when they do not.</p>
+        <a class="go play" href="pennies.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate games" data-text="iterated prisoner's dilemma the same pair plays again, and reputation gets a turn. games intermediate repeated games play often enough and a reputation is worth more than one win. reputation games play it again repeated games. play often enough and a reputation is worth more than one win. beginner repeated game tit for tat start friendly, then copy what they did last time. games copy the last move tit for tat. start friendly, then copy what they did last time. beginner tit for tat">
+        <div class="art"><span class="cast ipd" aria-hidden="true"><span class="round"><span class="piece bad"><img src="images/person.png" alt=""></span><span class="piece bad"><img src="images/person.png" alt=""></span></span><i class="arrow"></i><span class="round"><span class="piece ok"><img src="images/person.png" alt=""></span><span class="piece ok"><img src="images/person.png" alt=""></span></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">games</p>
+        <h2>Iterated prisoner's dilemma</h2>
+        <p>The same pair plays again, and reputation gets a turn.</p>
+        <a class="go play" href="iterated.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate games info" data-text="cheap talk messages are free. that does not make them believed.  games info talk is free cheap talk. a message costs nothing. that does not make it believed. intermediate">
+        <div class="art"><span class="cast talk" aria-hidden="true"><img src="images/envelope.png" alt=""><span class="piece skeptic"><img src="images/person.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">games · information</p>
+        <h2>Cheap talk</h2>
+        <p>A message costs nothing. That does not make it believed.</p>
+        <a class="go play" href="cheap-talk.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>When everyone uses the same thing</h2>
+        <p>Taking a little more, all using one road, or agreeing because you think the others want to, can leave everyone worse off.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="pick beginner games social" data-text="tragedy of the commons each extra bite is good for you and bad for the field. commons games social top pick beginner public goods game the pot grows when you give, and you can still keep your coins. doubled then split four ways. commons vs the prisoner's dilemma many players and a shared field, or two players and a shared silence.">
+        <div class="art"><span class="cast commons" aria-hidden="true"><img src="images/person.png" alt=""><i class="field"></i><img src="images/person.png" alt=""></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games · social</p>
+        <h2>Tragedy of the commons</h2>
+        <p>Each extra bite is good for you and bad for the field.</p>
+        <a class="go play" href="commons.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner games social" data-text="volunteer's dilemma someone should do it. each of you hopes it is not you. games social who steps up? volunteer's dilemma. someone should do it. each person hopes it is not them. beginner bystander effect a volunteer dilemma with more witnesses and less help. volunteer's dilemma social games beginner bystander effect why nobody does the dishes each person waits, and the sink gets worse. social games beginner social loafing social loafing why meetings grow worse more people, more waiting, and a softer sense that you should speak. social beginner why meetings grow worse">
+        <div class="art"><span class="cast vol" aria-hidden="true"><span class="away"><img src="images/person.png" alt=""><img src="images/person.png" alt=""><img src="images/person.png" alt=""></span><span class="piece chore"><img src="images/page.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games · social</p>
+        <h2>Volunteer's dilemma</h2>
+        <p>Someone should do it. Each person hopes it is not them.</p>
+        <a class="go play" href="volunteer.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="pick beginner fairness paradox" data-text="braess's paradox an extra road can make the traffic worse. fairness paradox top pick beginner why a feature can make it worse adding a choice can send people to a path nobody wanted. adding a feature product social decisions beginner why a feature can make it worse downs–thomson paradox faster roads can make the bus slower, and then the roads fill up. fairness paradox faster road, slower city downs–thomson paradox. speed up the road, and the trip can still get worse. intermediate downs–thomson paradox">
+        <div class="art"><span class="cast braess" aria-hidden="true"><span class="road"><img src="images/car.png" alt=""><img src="images/car.png" alt=""></span><span class="road extra"><img src="images/car.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">fairness · paradox</p>
+        <h2>Braess's paradox</h2>
+        <p>An extra road can make the traffic worse.</p>
+        <a class="go play" href="braess.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner voting social" data-text="abilene paradox everyone agrees to a trip nobody wanted. voting social the trip nobody wanted abilene paradox. you go because each person thinks the others want to. beginner groupthink agreement feels like evidence, and the objection stays quiet. decision trap voting social agreeing too fast groupthink. the trap is a room that settles before anyone disagrees. beginner groupthink">
+        <div class="art"><span class="cast abil" aria-hidden="true"><img src="images/person.png" alt=""><img src="images/person.png" alt=""><img src="images/person.png" alt=""><img class="car" src="images/car.png" alt=""></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">voting · social</p>
+        <h2>Abilene paradox</h2>
+        <p>You go because each person thinks the others want to.</p>
+        <a class="go play" href="abilene.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>Dividing money, or a cake</h2>
+        <p>Someone can force the shares, or the pieces can be cut so nobody wants to swap.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="beginner games decisions" data-text="ultimatum game you offer part of $10. a low offer can be rejected, and then nobody is paid. a stingy split can be rejected, and then nobody is paid. games decisions take it or leave it ultimatum game. a stingy split can be rejected, and then nobody is paid. beginner dictator game one person splits the money. the other can only take it. games decisions one person splits it dictator game. one person splits the money. the other can only accept. beginner dictator game">
+        <div class="art"><span class="cast ult" aria-hidden="true"><img src="images/person.png" alt=""><span class="coinpile"><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""></span><img class="one" src="images/coin-gold.png" alt=""><span class="piece bad"><img src="images/person.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games · decisions</p>
+        <h2>Ultimatum game</h2>
+        <p>You offer part of $10. A low offer can be rejected, and then nobody is paid.</p>
+        <a class="go play" href="ultimatum.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner games" data-text="trust game you send part of $10. it is tripled, and the other player can send some back. you send some coins. they come back larger, if the other returns them.  games coins that come back larger trust game. you send some coins. they come back larger, if the other returns them. beginner">
+        <div class="art"><span class="cast trust" aria-hidden="true"><img src="images/person.png" alt=""><img class="sent" src="images/coin-gold.png" alt=""><i class="arrow"></i><img src="images/person.png" alt=""><span class="coinpile"><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""><img src="images/coin-gold.png" alt=""></span></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">games</p>
+        <h2>Trust game</h2>
+        <p>You send part of $10. It is tripled, and the other player can send some back.</p>
+        <a class="go play" href="trust.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner fairness" data-text="fair cake cutting you cut the cake. the other person chooses a piece first. divide a cake so that nobody prefers someone else's piece. fairness beginner i cut, you choose the cutter's best trick is to make the two pieces equal. fairness beginner i cut, you choose envy-free the idea only: each person believes their own share is at least as good. fairness intermediate envy-free">
+        <div class="art"><span class="cast cakes" aria-hidden="true"><span class="pals"><img src="images/person.png" alt=""><img src="images/person.png" alt=""><img src="images/person.png" alt=""></span><img class="cake" src="images/cake.png" alt=""></span></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">fairness</p>
+        <h2>Fair cake cutting</h2>
+        <p>You cut the cake. The other person chooses a piece first.</p>
+        <a class="go play" href="cake.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>Votes that disagree with each other</h2>
+        <p>A count can look fair and still lose to another way of counting.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="intermediate voting paradox" data-text="condorcet paradox every option loses to another, one pair at a time. three restaurants. every pair has a winner, and the winners go in a circle. voting paradox intermediate">
+        <div class="art"><img src="images/condorcet.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">voting · a circle</p>
+        <h2>Condorcet paradox</h2>
+        <p>Three restaurants. Every pair has a winner, and the winners go in a circle.</p>
+        <a class="go play" href="condorcet.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="advanced voting" data-text="arrow's impossibility a short version: no ranking rule keeps every reasonable promise. with three or more choices, no voting rule can keep every fairness promise. voting advanced">
+        <div class="art"><img src="images/arrow.jpg" alt=""></div>
+        <div class="marks"><span class="mark advanced">Advanced</span></div>
+        <p class="kicker">voting · fair rules</p>
+        <h2>Arrow's impossibility</h2>
+        <p>With three or more choices, no voting rule can keep every fairness promise.</p>
+        <a class="go play" href="arrow.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate voting" data-text="borda vs plurality count first places, or count the whole ranking. count only first place, or count the whole list. the winner can change. count only the top name, or score 2, then 1, then 0. voting intermediate spoiler effect a third candidate with no chance can change who wins. voting beginner spoiler effect">
+        <div class="art"><img src="images/borda.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">voting · two counts</p>
+        <h2>Borda vs plurality</h2>
+        <p>Count only the top name, or score 2, then 1, then 0. The winner can change.</p>
+        <a class="go play" href="borda.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner voting games" data-text="strategic voting you vote for someone else so the one you fear does not win. voting for your real favorite can help the candidate you like least. you want a to win. a vote for a can leave c still ahead. voting games beginner gibbard–satterthwaite the idea only: once there are three options, some voter can gain by lying. voting every vote can be gamed gibbard–satterthwaite, the idea only. some voting rule always rewards a dishonest ballot. advanced gibbard–satterthwaite theorem gibbard–satterthwaite theorem">
+        <div class="art"><img src="images/strategic.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">voting · second choice</p>
+        <h2>Strategic voting</h2>
+        <p>You want A to win. A vote for A can leave C, the one you fear, still ahead.</p>
+        <a class="go play" href="strategic.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate voting paradox" data-text="ostrogorski's paradox a party can win every issue and still lose the election, or the reverse.  voting paradox the party count flips ostrogorski's paradox. each issue has a majority, and the party vote still reverses it. a question is one topic, such as schools, taxes, or roads. build a new school, raise taxes, fix the roads. party x and party y are the two parties. the election is a separate vote. each person votes for the party they agreed with on more things. party y still wins the election. intermediate discursive dilemma the group says yes to each premise and no to the conclusion. three judges. signature and notice.">
+        <div class="art"><img src="images/ostrogorski.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">voting · two parties</p>
+        <h2>Ostrogorski's paradox</h2>
+        <p>Each person votes for the party they agreed with more often. More people agree with Party X on the school, the taxes, and the roads. Party Y still wins.</p>
+        <a class="go play" href="ostrogorski.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate voting paradox" data-text="anscombe's paradox a majority of people can be on the losing side of a majority of votes.  voting paradox a majority that loses anscombe's paradox. most people can win most votes and still lose the total. every proposal can pass, while most people lose most of the time. a proposal is one plan, such as a park, a road, or a clinic. intermediate">
+        <div class="art"><img src="images/anscombe.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">voting · who loses</p>
+        <h2>Anscombe's paradox</h2>
+        <p>Every plan, such as a park or a road, can pass, while most people lose most of the time.</p>
+        <a class="go play" href="anscombe.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate voting info" data-text="jury theorem if each juror is slightly better than a coin, a large jury gets sharp. if each person is right a little more often than wrong, a bigger group gets more sure. three people answer the same three cases.  voting info intermediate condorcet jury theorem">
+        <div class="art"><img src="images/jury.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">voting · a bigger group</p>
+        <h2>Condorcet jury theorem</h2>
+        <p>Three people answer the same three cases. If each is right a little more often than wrong, the group gets more sure.</p>
+        <a class="go play" href="jury.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>Is this choice worth taking</h2>
+        <p>A good average, a larger count, or one more look can still be the wrong reason to say yes.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="intermediate decisions paradox" data-text="allais paradox a sure thing changes your pick even when the extra chance is the same. decisions paradox intermediate expected value and utility the average payout and what it is worth to you are different sums. decisions the average, and what it is worth expected value is the average win. expected utility is whether you want to take it. intermediate expected value insurance the average payoff is a loss, and the bad day is still why you pay.">
+        <div class="art"><img src="images/allais.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">decisions · paradox</p>
+        <h2>Allais paradox</h2>
+        <p>A sure thing changes your pick even when the extra chance is the same.</p>
+        <a class="go play" href="allais.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate decisions paradox" data-text="ellsberg paradox people pay to avoid a chance whose odds are simply not stated. risk vs uncertainty ambiguity decisions paradox the urn you cannot count ellsberg paradox. a known risk feels safer than a risk with no stated odds. intermediate risk vs uncertainty a known coin is not the same as a coin nobody has described. decisions intermediate knightian uncertainty knightian uncertainty">
+        <div class="art"><img src="images/ellsberg.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">decisions · paradox</p>
+        <h2>Ellsberg paradox</h2>
+        <p>A known risk feels safer than a risk with no stated odds.</p>
+        <a class="go play" href="ellsberg.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner decisions" data-text="sunk cost the money already spent is not a reason to spend more. decisions beginner sunk cost fallacy opportunity cost the price of this choice is the best thing you did not pick. decisions beginner opportunity cost sunk cost vs opportunity cost one looks backward at money already gone. one looks at the next best use. compare decisions beginner sunk cost vs opportunity cost">
+        <div class="art"><img src="images/sunk.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">decisions</p>
+        <h2>Sunk cost fallacy</h2>
+        <p>The money already spent is not a reason to spend more.</p>
+        <a class="go play" href="sunk.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate decisions games" data-text="moral hazard once you are covered, the careful choice is less careful.  decisions games covered, so less careful moral hazard. once the loss is covered, the careful choice gets less careful. intermediate principal-agent problem principal–agent you hire someone whose reward is not the same as yours.">
+        <div class="art"><img src="images/hazard.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">decisions · games</p>
+        <h2>Moral hazard</h2>
+        <p>Once the loss is covered, the careful choice gets less careful.</p>
+        <a class="go play" href="moral-hazard.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="advanced decisions logic" data-text="pascal's wager a decision tree with an infinite branch, and a reason to distrust it.  decisions logic advanced">
+        <div class="art"><img src="images/pascal.jpg" alt=""></div>
+        <div class="marks"><span class="mark advanced">Advanced</span></div>
+        <p class="kicker">decisions · logic</p>
+        <h2>Pascal's wager</h2>
+        <p>A decision tree with an infinite branch, and a reason to distrust it.</p>
+        <a class="go play" href="pascal.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="advanced decisions paradox" data-text="newcomb's paradox take one box, or both? the predictor has already moved.  decisions paradox the predictor's two boxes newcomb's paradox. one box or both, and the predictor has already packed them. advanced kavka's toxin puzzle kavka's toxin you are paid to intend the drink, not to drink it.">
+        <div class="art"><img src="images/newcomb.jpg" alt=""></div>
+        <div class="marks"><span class="mark advanced">Advanced</span></div>
+        <p class="kicker">decisions · paradox</p>
+        <h2>Newcomb's paradox</h2>
+        <p>One box or both, and the predictor has already packed them.</p>
+        <a class="go play" href="newcomb.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="pick beginner decisions" data-text="trolley problem one track, five people, and a switch. decisions top pick beginner transplant problem five patients, one healthy visitor, and a doctor's hands. decisions intermediate transplant problem">
+        <div class="art"><img src="images/trolley.jpg" alt=""></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">decisions</p>
+        <h2>Trolley problem</h2>
+        <p>One track, five people, and a switch.</p>
+        <a class="go play" href="trolley.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner decisions" data-text="explore vs exploit keep the restaurant you like, or try the new one. decisions beginner multi-armed bandit three machines, unknown payouts, and only one pull at a time. story version decisions intermediate multi-armed bandit">
+        <div class="art"><img src="images/explore.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">decisions</p>
+        <h2>Explore vs exploit</h2>
+        <p>Keep the restaurant you like, or try the new one.</p>
+        <a class="go play" href="explore.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate decisions counting" data-text="secretary problem see them one by one. you cannot go back. decisions counting intermediate secretary problem, hiring the same stop rule, told as dating or as a stack of résumés. dating hiring decisions social beginner secretary problem, hiring optimal stopping look long enough to learn the field, then take the next best. decisions intermediate optimal stopping">
+        <div class="art"><img src="images/secretary.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">decisions · counting</p>
+        <h2>Secretary problem</h2>
+        <p>See them one by one. You cannot go back.</p>
+        <a class="go play" href="secretary.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>What the others have already figured out</h2>
+        <p>The puzzle starts from what was said: an announcement, a message, or an answer that might be a lie.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="pick intermediate logic paradox" data-text="unexpected hanging the surprise disappears the moment the last day is impossible. surprise test logic paradox top pick intermediate unexpected hanging paradox surprise test the same knot as the unexpected hanging, told as a quiz. logic paradox intermediate surprise test">
+        <div class="art"><img src="images/hanging.jpg" alt=""></div>
+        <div class="marks"><span class="mark pick">Top pick</span><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">logic · paradox</p>
+        <h2>Unexpected hanging</h2>
+        <p>The surprise disappears the moment the last day is impossible.</p>
+        <a class="go play" href="hanging.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate logic info" data-text="two generals a message is not enough. the acknowledgement is not enough either.  logic info intermediate">
+        <div class="art"><img src="images/generals.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">logic · information</p>
+        <h2>Two generals</h2>
+        <p>A message is not enough. The acknowledgement is not enough either.</p>
+        <a class="go play" href="generals.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="advanced logic" data-text="blue-eyed islanders they leave on the nth night, and only because they all heard the guru. logic advanced muddy children each child sees the others, and the father's announcement starts the count. logic advanced muddy children common knowledge i know, you know, and we both know that we know. mutual knowledge stops earlier. logic info we know that we know common knowledge. each of you knows it, and knows that the other knows. advanced common knowledge aumann's agreement theorem if you started from the same chances and you each hear the other's conclusion, the conclusions have to meet. agree to disagree.">
+        <div class="art"><img src="images/islanders.jpg" alt=""></div>
+        <div class="marks"><span class="mark advanced">Advanced</span></div>
+        <p class="kicker">logic</p>
+        <h2>Blue-eyed islanders</h2>
+        <p>They leave on the nth night, and only because they all heard the guru.</p>
+        <a class="go play" href="islanders.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner logic" data-text="knights and knaves one always tells the truth. one never does. you get one question. we are both knaves. the speaker is a knave and the other is a knight. logic beginner hardest logic puzzle one tells the truth, one lies, and one answers at random. da and ja.">
+        <div class="art"><img src="images/knights.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">logic</p>
+        <h2>Knights and knaves</h2>
+        <p>One says: We are both knaves.</p>
+        <a class="go play" href="knights.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>Keep going one small step</h2>
+        <p>Replace a plank, remove a grain, or aim a rule at itself.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="beginner logic" data-text="theseus' ship replace every plank. is it the same ship?  logic beginner ship of theseus">
+        <div class="art"><img src="images/theseus.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">logic</p>
+        <h2>Ship of Theseus</h2>
+        <p>Replace every plank. Is it the same ship?</p>
+        <a class="go play" href="theseus.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner logic paradox" data-text="the heap one grain is not a heap. adding one grain never makes the difference. and yet. sorites logic paradox still a heap? the heap. remove one grain. when did it stop being a heap? beginner sorites paradox">
+        <div class="art"><img src="images/sorites.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">logic · paradox</p>
+        <h2>Sorites paradox</h2>
+        <p>Remove one grain. When did it stop being a heap?</p>
+        <a class="go play" href="sorites.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner logic paradox" data-text="the liar this sentence is false. epimenides walks into the same wall. epimenides logic paradox beginner liar paradox">
+        <div class="art"><img src="images/liar.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">logic · paradox</p>
+        <h2>Liar paradox</h2>
+        <p>This sentence is false.</p>
+        <a class="go play" href="liar.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate logic paradox" data-text="russell's barber the barber shaves everyone who does not shave himself. logic paradox intermediate russell's paradox set of all sets that do not contain themselves">
+        <div class="art"><img src="images/russell.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">logic · paradox</p>
+        <h2>Russell's paradox</h2>
+        <p>A bag of every bag that is not inside itself. Does that bag go in?</p>
+        <a class="go play" href="russell.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="beginner paradox counting" data-text="coastline paradox the shore stays still. a shorter ruler reports a new length. the ends stay put. no single length. paradox counting beginner toy shore">
+        <div class="art"><img src="images/coast.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">paradox · counting</p>
+        <h2>Coastline paradox</h2>
+        <p>The ends stay put. The shore still has no single length.</p>
+        <a class="go play" href="coast.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="advanced paradox logic" data-text="banach-tarski paradox cut one ball into pieces. can the pieces make two balls of the same size? a turn drops the first letter. axiom of choice. no volume. paradox logic advanced banach tarski">
+        <div class="art"><img src="images/banach.jpg" alt=""></div>
+        <div class="marks"><span class="mark advanced">Advanced</span></div>
+        <p class="kicker">paradox · logic</p>
+        <h2>Banach-Tarski paradox</h2>
+        <p>Turn one set of points and it fills a ball. The other set fills a second ball.</p>
+        <a class="go play" href="banach.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head">
+        <h2>When two things rise together</h2>
+        <p>Rising together still does not say which one pushes.</p>
+      </div>
+      <div class="grid">
+      <article class="card" data-status="ready" data-tags="beginner cause" data-text="reverse causation the arrow may run the other way.  cause beginner">
+        <div class="art"><img src="images/reverse.jpg" alt=""></div>
+        <div class="marks"><span class="mark beginner">Beginner</span></div>
+        <p class="kicker">cause</p>
+        <h2>Reverse causation</h2>
+        <p>The arrow may run the other way.</p>
+        <a class="go play" href="reverse.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate cause" data-text="intervention vs observation watching the coffee drinkers is not the same as assigning the coffee. cause intermediate do-calculus, one cartoon a button you can press, drawn next to an arrow you only watched. intervention cause stepping in is not watching do-calculus, one cartoon. seeing two things together is not the same as changing one. advanced do-calculus bad controls controlling for adjusting for the wrong thing can break a true answer.">
+        <div class="art"><img src="images/intervention.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">cause</p>
+        <h2>Intervention vs observation</h2>
+        <p>Watching the coffee drinkers is not the same as assigning the coffee.</p>
+        <a class="go play" href="intervention.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      <article class="card" data-status="ready" data-tags="intermediate cause stats" data-text="ice cream and drowning ice cream sales and drowning both go up in summer. cause statistics intermediate correlation is not causation hot weather common cause confounding smoking and coffee a third thing pushes both">
+        <div class="art"><img src="images/icecream.jpg" alt=""></div>
+        <div class="marks"><span class="mark intermediate">Intermediate</span></div>
+        <p class="kicker">cause · statistics</p>
+        <h2>Ice cream and drowning</h2>
+        <p>Ice cream sales and drowning both go up in summer.</p>
+        <a class="go play" href="ice-cream.html"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4.5 2.6l9 5.4-9 5.4z" fill="none" stroke="#0e8a7d" stroke-width="1.6"/></svg>Play</a>
+      </article>
+      </div>
+    </section>
+
+    <p class="empty" id="empty" hidden>No problems match.</p>
+  </div>
+  <div class="card card-pop" id="card-pop" hidden></div>
+  <script src="js/seen.js"></script>
+  <script src="js/gym.js"></script>
+</body>
+</html>

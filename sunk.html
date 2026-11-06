@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sunk cost fallacy · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Sunk cost fallacy">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Sunk cost fallacy | Opportunity cost | Sunk cost vs opportunity cost -->
+      <p class="kicker">decisions</p>
+      <h1>Sunk cost fallacy</h1>
+      <p class="lead">The money already spent is not a reason to spend the evening too.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">You have already spent $60 on a project. It will cost another $40 to finish. A new option appears that gives the same result for $30 total. What do you do?</p>
+        <img class="scene" src="images/sunk.jpg" alt="">
+        <div class="sunk-split">
+          <div class="sunk-card" id="old-job">
+            <b>$60 already spent</b>
+            <div class="meter" aria-hidden="true"><i class="paid"></i><i class="more" id="more"></i></div>
+            <p>Finish the original project: $40 more</p>
+          </div>
+          <div class="sunk-card" id="fresh">
+            <b>New option, $30 total</b>
+            <div class="meter fresh-meter" aria-hidden="true"><i class="fresh-pay"></i></div>
+            <p>Same result</p>
+          </div>
+        </div>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="go-on" data-pace="400">Finish the original project ($40 more)</button>
+          <button type="button" class="btn" id="stop" data-pace="400">Switch to the new option ($30)</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The $60 is already gone either way.</p>
+        <p>Only the future cost matters.</p>
+        <p>Choosing to finish only because of the money already spent is the sunk cost fallacy.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/sunk.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

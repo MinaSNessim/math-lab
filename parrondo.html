@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parrondo's paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Parrondo's paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">fairness · paradox · traps</p>
+      <h1>Parrondo's paradox</h1>
+      <p class="lead">Each game loses. Switching between them can win.</p>
+      <section class="stage">
+        <p class="ice-intro">Each machine, played alone, drifts down. What happens if you switch between them?</p>
+        <div class="trio" id="machines"></div>
+        <p class="capital" id="capital">0</p>
+        <div class="step-row" id="steps"></div>
+        <svg id="trend" class="trend" viewBox="0 0 640 210" width="640" height="210" role="img" aria-label="Expected coin count for the three ways to play">
+          <line id="trend-zero" stroke="#0c1438" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <polyline id="line-a" fill="none" stroke="#fe8e83" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline id="line-b" fill="none" stroke="#f5c518" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline id="line-mix" fill="none" stroke="#5ec5a7" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <text id="lab-a" font-size="14" font-weight="800" fill="#0c1438" font-family="Nunito, sans-serif"></text>
+          <text id="lab-b" font-size="14" font-weight="800" fill="#0c1438" font-family="Nunito, sans-serif"></text>
+          <text id="lab-mix" font-size="14" font-weight="800" fill="#0c1438" font-family="Nunito, sans-serif"></text>
+          <text id="lab-zero" font-size="13" font-weight="800" fill="#0c1438" font-family="Nunito, sans-serif">0</text>
+          <text id="lab-axis" x="560" y="198" text-anchor="end" font-size="13" font-weight="800" fill="#0c1438" font-family="Nunito, sans-serif">80 plays</text>
+        </svg>
+        <p class="caption" id="caption">A coral coin count is a multiple of 3. That is when machine B uses its worse coin. One short walk can go either way.</p>
+        <div class="controls guess">
+          <span class="field">After 80 plays, the average result</span>
+          <button type="button" class="btn ghost" id="guess-up">Ends up</button>
+          <button type="button" class="btn ghost" id="guess-down">Ends down</button>
+          <span class="guess-note" id="guess-note">Lock a direction, then run the walks.</span>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn ghost" id="plan-a">Only A</button>
+          <button type="button" class="btn ghost" id="plan-b">Only B</button>
+          <button type="button" class="btn ghost" id="plan-mix">Switch between them</button>
+          <button type="button" class="btn" id="once">Play one walk</button>
+          <label class="field">Walks <input class="count" id="count" type="number" min="1" max="20000" value="500" /></label>
+          <button type="button" class="btn coral" id="run" disabled>Run many walks</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="this-walk">—</b><span>This walk's ending coins</span></div>
+          <div class="stat"><b id="sim">—</b><span>Average change after 80 plays</span></div>
+          <div class="stat"><b id="theory">—</b><span>Walks that finished up</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Machine A wins 49.5% of plays. Left on its own, the coins drift down.</p>
+        <p>Machine B wins 9.5% of plays when your coins are a multiple of 3, and 74.5% otherwise. Left on its own, it drifts down too.</p>
+        <p class="spoiler" hidden>Switching between the machines drifts up. Each machine, played by itself, drifts down.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/parrondo.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

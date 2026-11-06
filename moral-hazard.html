@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moral hazard · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Moral hazard">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Moral hazard | Principal–agent problem -->
+      <p class="kicker">decisions · games</p>
+      <h1>Moral hazard</h1>
+      <p class="lead">Once the loss is covered, the careful choice gets less careful.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">With no insurance, a crash costs the driver, so the risk stays low. Full insurance pays for the crash. The yellow shield is that cover, and the bar is how much risk the driver takes.</p>
+        <div class="cover-scene">
+          <img class="cover-person" src="images/person.png" alt="">
+          <svg id="shield" class="shield" viewBox="0 0 70 80" width="70" height="80" aria-hidden="true">
+            <path d="M35 6 L62 18 V40 C62 58 35 74 35 74 C35 74 8 58 8 40 V18 Z" fill="#f5c518" stroke="#0c1438" stroke-width="3"/>
+          </svg>
+          <img class="cover-car" src="images/car.png" alt="">
+        </div>
+        <div class="road" aria-hidden="true"><i></i></div>
+        <div class="risk-track" aria-hidden="true"><i class="risk-fill" id="risk"></i></div>
+        <p class="round-label" id="risk-label">Risk taken: low</p>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="insure" data-pace="900">Add full insurance</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The green figure is the driver. The red car is the crash. The yellow bar is the risk they choose to take.</p>
+        <p>While the driver pays for the crash, more risk is expensive, so the bar stays short.</p>
+        <p>Full insurance moves the bill off the driver. The shield comes on, the crash can still happen, and the same driver takes more risk.</p>
+        <p>That change is moral hazard. The road did not get safer. The bill moved.</p>
+        <p>A deductible leaves part of the crash on the driver, so some of the careful choice remains.</p>
+        <p>The principal–agent problem is the same shift: you hire someone, the loss falls on you, and their reward is not the same as yours.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/moral-hazard.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Strategic voting · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Strategic voting">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Strategic voting | Gibbard–Satterthwaite theorem -->
+      <p class="kicker">voting · games</p>
+      <h1>Strategic voting</h1>
+      <p class="lead">You want A to win. C is ahead. Your one vote is still blank.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">You want A to win. Your real order is A first, B second, and C last. C is the one you want to lose.</p>
+        <p class="ice-intro">Other people have already voted. C has 3 first places, B has 2, and A has 1, so C is ahead. Your ballot is the blank page. It is not in those stacks yet.</p>
+        <p class="ice-intro">Add your one vote. A vote for A is the honest vote. A vote for B uses your second choice. Then see whether C still wins.</p>
+        <div class="slips" id="slips"></div>
+        <p class="pile-count" id="score"></p>
+        <div class="controls" id="marks">
+          <button type="button" class="btn ghost" data-mark="favorite" data-pace="1000">Vote for A, the one you want</button>
+          <button type="button" class="btn ghost" data-mark="compromise" data-pace="1000">Vote for B, your second choice</button>
+          <button type="button" class="btn coral" data-mark="feared" data-pace="1000">Vote for C, the one you fear</button>
+        </div>
+        <p class="caption" id="caption"></p>
+      </section>
+      <div class="notes">
+        <p>Before your vote, C has 3, B has 2, and A has 1. You want A, and C is ahead.</p>
+        <p>A vote for A makes the totals A 2, B 2, C 3. C still wins. A vote for B makes the totals A 1, B 3, C 3. B catches C, so C no longer wins alone.</p>
+        <p>The vote that stops your last choice is your second choice, not the one you want most.</p>
+      </div>
+    </article>
+  <script src="js/shelf.js"></script>
+  <script src="js/strategic.js"></script>
+  </div>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

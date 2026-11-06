@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trolley problem · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Trolley problem">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Trolley problem | Transplant problem -->
+      <p class="kicker">decisions</p>
+      <h1>Trolley problem</h1>
+      <p class="lead">You can send the harm the other way. Both ways have a cost.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">A trolley is heading toward five people. You can pull a lever to send it toward one person instead. What do you do?</p>
+        <svg class="track-board" viewBox="0 50 640 270" role="img" aria-label="A track that splits. Five people stand on the main track. One person stands on the side track.">
+          <path d="M20 160 H620" stroke="#0c1438" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M300 160 L540 270" stroke="#0c1438" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <g transform="translate(214,108)">
+            <g id="lever" class="lever">
+              <circle cx="12" cy="28" r="10" fill="#0c1438"/>
+              <rect x="12" y="20" width="72" height="16" rx="6" fill="#f5c518" stroke="#0c1438" stroke-width="3"/>
+            </g>
+          </g>
+          <g id="five"><g class="folk" transform="translate(430,108)"><image href="images/person.png" x="0" y="0" width="36" height="52" preserveAspectRatio="xMidYMax meet"/></g><g class="folk" transform="translate(474,108)"><image href="images/person.png" x="0" y="0" width="36" height="52" preserveAspectRatio="xMidYMax meet"/></g><g class="folk" transform="translate(518,108)"><image href="images/person.png" x="0" y="0" width="36" height="52" preserveAspectRatio="xMidYMax meet"/></g><g class="folk" transform="translate(562,108)"><image href="images/person.png" x="0" y="0" width="36" height="52" preserveAspectRatio="xMidYMax meet"/></g><g class="folk" transform="translate(606,108)"><image href="images/person.png" x="0" y="0" width="36" height="52" preserveAspectRatio="xMidYMax meet"/></g></g>
+          <g class="folk" id="one" transform="translate(500,246)"><image href="images/person.png" x="0" y="14" width="36" height="52" preserveAspectRatio="xMidYMax meet"/></g>
+          <g transform="translate(48,112)">
+            <g id="runaway" class="runaway">
+              <image href="images/tram.png" x="-8" y="-6" width="88" height="58" preserveAspectRatio="xMidYMax meet"/>
+            </g>
+          </g>
+        </svg>
+        <p class="hit-count">Hit <b id="hit-num">—</b></p>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="pull" data-pace="900">Pull the lever</button>
+          <button type="button" class="btn" id="leave" data-pace="900">Do nothing</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Pulling the lever saves five and kills one.</p>
+        <p>Doing nothing lets five die.</p>
+        <p>Many people accept the lever but reject pushing someone directly for the same outcome.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/trolley.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

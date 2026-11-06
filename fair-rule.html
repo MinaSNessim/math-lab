@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A fair rule, an unfair total · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="A fair rule, an unfair total">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">social · fairness · statistics</p>
+      <h1>A fair rule, an unfair total</h1>
+      <p class="lead">The same rule in every district. A different picture once the seats are added.</p>
+      <section class="stage playboard" id="board">
+        <p class="ice-intro">Each local decision follows a fair rule. When the local results are added up, the overall outcome can still be unfair. Here the rule is the same in every district: the side with more votes takes that district's one seat.</p>
+        <p class="ask-line">Every district uses the same fair rule. What does the national total look like?</p>
+      </section>
+      <div class="notes">
+        <p>Inside every district the votes are counted the same way and the local result matches the local votes.</p>
+        <p>Because the districts have different sizes or different margins, the national total of seats can diverge sharply from the national total of votes.</p>
+        <p>A rule that is fair at each step can still produce an overall result that looks unfair.</p>
+        <p>The mismatch comes from how the local outcomes are aggregated, not from any single local count being rigged.</p>
+      </div>
+    </article>
+    <script src="js/shelf.js"></script>
+    <script src="js/fair-rule.js"></script>
+  </div>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

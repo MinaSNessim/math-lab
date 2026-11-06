@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boy or girl paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Boy or girl paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">paradox</p>
+      <h1>Boy or girl paradox</h1>
+      <p class="lead">Two children. At least one is a boy.</p>
+      <section class="stage">
+        <p class="ice-intro">Two children. You hear that at least one is a boy. How often are both boys?</p>
+        <div class="families" id="families">
+          <div class="family" id="fam-bb">
+            <span class="kid boy" aria-label="Boy"></span>
+            <span class="kid boy" aria-label="Boy"></span>
+          </div>
+          <div class="family" id="fam-bg">
+            <span class="kid boy" aria-label="Boy"></span>
+            <span class="kid girl" aria-label="Girl"></span>
+          </div>
+          <div class="family" id="fam-gb">
+            <span class="kid girl" aria-label="Girl"></span>
+            <span class="kid boy" aria-label="Boy"></span>
+          </div>
+          <div class="family" id="fam-gg">
+            <span class="kid girl" aria-label="Girl"></span>
+            <span class="kid girl" aria-label="Girl"></span>
+          </div>
+        </div>
+        <p class="day-row" id="days" hidden>
+          <span>Mo</span><span class="is-tu">Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+        </p>
+        <div class="tue-board" id="tue-board" hidden>
+          <p class="tue-label">Two boys</p>
+          <div class="families is-many" id="tue-both"></div>
+          <p class="tue-label">One boy</p>
+          <div class="families is-many" id="tue-rest"></div>
+        </div>
+        <p class="caption" id="caption">Four families, equally likely. Lock a guess, then the ones ruled out leave.</p>
+        <div class="controls guess">
+          <label class="field">Your guess <input id="guess" type="range" min="0" max="100" value="50" /> <b id="guess-label">50%</b></label>
+          <button type="button" class="btn" id="lock">Lock guess</button>
+          <span class="guess-note" id="guess-note">Among the families that match, what share has two boys?</span>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn ghost is-on" id="mode-boy">At least one boy</button>
+          <button type="button" class="btn ghost" id="mode-tuesday">Boy born on Tuesday</button>
+          <label class="field">Families <input class="count" id="count" type="number" min="100" max="20000" value="2000" /></label>
+          <button type="button" class="btn" id="run" disabled>Run families</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="both">—</b><span>Both boys, among families that match</span></div>
+          <div class="stat"><b id="kept">—</b><span>Families that match</span></div>
+          <div class="stat"><b id="target">—</b><span>Long-run share</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Two children give four equally likely families: boy-boy, boy-girl, girl-boy, and girl-girl.</p>
+        <p>The picture lines those four families up. The guess is the share with two boys among the families the news still allows.</p>
+        <p class="spoiler" hidden>Hearing that at least one is a boy removes only the girl-girl families. One of the three families left has two boys.</p>
+        <p class="spoiler" hidden>If the news is more specific, such as a boy born on Tuesday, fewer mixed families qualify, and the share with two boys moves from 1 in 3 toward 13 in 27.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/boy-girl.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

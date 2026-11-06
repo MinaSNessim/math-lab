@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birthday paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Birthday paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">paradox · counting</p>
+      <h1>Birthday paradox</h1>
+      <p class="lead">How full before two people share a day?</p>
+      <section class="stage">
+        <p class="ice-intro">How full does the room get before two people share a day?</p>
+        <div class="people" id="people"></div>
+        <p class="caption" id="caption">Fill a room and look for a shared day. The day number sits on each matching pair.</p>
+        <div class="controls guess">
+          <label class="field">Your guess <input id="guess" type="range" min="0" max="100" value="50" /> <b id="guess-label">50%</b></label>
+          <button type="button" class="btn" id="lock">Lock guess</button>
+          <span class="guess-note" id="guess-note">Lock a share, then run the rooms.</span>
+        </div>
+        <div class="controls">
+          <label class="field">People <input id="people-count" type="range" min="2" max="80" value="23" /> <b id="people-label">23</b></label>
+          <button type="button" class="btn" id="fill">Fill a room</button>
+          <label class="field">Rooms <input class="count" id="rooms" type="number" min="1" max="20000" value="400" /></label>
+          <button type="button" class="btn coral" id="run" disabled>Run many rooms</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="shared-now">—</b><span>This room</span></div>
+          <div class="stat"><b id="sim">—</b><span>Rooms with a shared day</span></div>
+          <div class="stat"><b id="theory">—</b><span>Long-run share for this size</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Each birthday is one of 365 days, spread evenly. Leap day is left out.</p>
+        <p>A shared day is any two people in the room, not a match with you alone.</p>
+        <p class="spoiler" hidden>With 23 people there are 253 pairs. A shared birthday shows up in about half of rooms.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/birthday.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

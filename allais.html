@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Allais paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Allais paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Allais paradox | Expected value | Insurance -->
+      <p class="kicker">decisions · paradox</p>
+      <h1>Allais paradox</h1>
+      <p class="lead">A sure thing changes your pick even when the extra chance is the same.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">Pick one from each pair. The good choice by the money is the higher average.</p>
+        <img class="scene" src="images/allais.jpg" alt="">
+        <p class="round-label">Green is $1 million, yellow is $5 million, and red is $0. The line marks the shared 89%.</p>
+        <div class="pick-board">
+          <p class="round-label">Pair 1</p>
+          <div class="pick-pair" id="pair-a">
+            <button type="button" class="pick-card" id="pick-sure" data-pace="400">
+              <span class="pick-name">A</span>
+              <span class="pick-bar cols" aria-hidden="true"><i class="g cut"></i><i class="g span2"></i></span>
+              <b>100% chance of $1 million</b>
+              <span class="avg">Lower average · $1,000,000</span>
+            </button>
+            <button type="button" class="pick-card" id="pick-gamble" data-pace="400">
+              <span class="pick-name">B</span>
+              <span class="pick-bar cols" aria-hidden="true"><i class="g cut"></i><i class="y"></i><i class="r"></i></span>
+              <b>89% chance of $1 million, 10% chance of $5 million, 1% chance of $0</b>
+              <span class="avg">Higher average · $1,390,000</span>
+            </button>
+          </div>
+          <p class="round-label">Pair 2</p>
+          <div class="pick-pair" id="pair-b">
+            <button type="button" class="pick-card" id="pick-modest" data-pace="400">
+              <span class="pick-name">C</span>
+              <span class="pick-bar cols" aria-hidden="true"><i class="r cut"></i><i class="g span2"></i></span>
+              <b>11% chance of $1 million, 89% chance of $0</b>
+              <span class="avg">Lower average · $110,000</span>
+            </button>
+            <button type="button" class="pick-card" id="pick-big" data-pace="400">
+              <span class="pick-name">D</span>
+              <span class="pick-bar cols" aria-hidden="true"><i class="r cut"></i><i class="y"></i><i class="r"></i></span>
+              <b>10% chance of $5 million, 90% chance of $0</b>
+              <span class="avg">Higher average · $500,000</span>
+            </button>
+          </div>
+        </div>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+      </section>
+      <div class="notes">
+        <p>Pick one from each pair. The line on the picture marks the shared 89%.</p>
+        <p>Pair 1 is A or B. Pair 2 is C or D.</p>
+        <p class="spoiler" hidden>The good choice by the money is B and D. B averages $1,390,000 against A's $1,000,000. D averages $500,000 against C's $110,000.</p>
+        <p class="spoiler" hidden>The part left of the line is an 89% chance. In the first pair it pays $1 million. In the second pair it pays $0. That shared part should not flip your pick.</p>
+        <p class="spoiler" hidden>Right of the line, A and C keep a chance of $1 million. B and D keep a chance of $5 million. A goes with C. B goes with D.</p>
+        <p class="spoiler" hidden>Taking A and then D follows neither the higher average nor the safer pick. That switch is the Allais paradox.</p>
+        <p class="spoiler" hidden>Insurance premiums over many quiet years cost more than the insurer expects to pay, and one bad day can still cost more than you can lose.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/allais.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

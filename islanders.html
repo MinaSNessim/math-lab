@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue-eyed islanders · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Blue-eyed islanders">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Blue-eyed islanders | Muddy children | Common knowledge | Aumann's agreement theorem -->
+      <p class="kicker">logic</p>
+      <h1>Blue-eyed islanders</h1>
+      <p class="lead">They leave on the nth night, and only because they all heard the guru.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">Everyone can see the others’ eye colors but not their own. A guru says: “I see someone with yellow eyes.” If you deduce your own eye color, you leave that night.</p>
+        <svg class="isle-board" viewBox="0 0 640 240" role="img" aria-label="Five people, three with yellow eyes, a red guru, and a boat">
+          <image href="images/ship.png" x="488" y="128" width="140" height="96" preserveAspectRatio="xMidYMax meet"/>
+          <g transform="translate(18,46)">
+            <path d="M8 28 C8 6 36 4 36 28" fill="#0c1438"/>
+            <circle cx="22" cy="30" r="14" fill="#ffffff" stroke="#0c1438" stroke-width="2.5"/>
+            <circle cx="16" cy="29" r="2.2" fill="#0c1438"/>
+            <circle cx="28" cy="29" r="2.2" fill="#0c1438"/>
+            <path d="M16 37 q6 4 12 0" fill="none" stroke="#0c1438" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M6 108 V76 C6 60 14 52 22 52 C30 52 38 60 38 76 V108" fill="#fe8e83" stroke="#0c1438" stroke-width="2.5"/>
+            <path d="M0 70 H10 M34 70 H44" fill="none" stroke="#0c1438" stroke-width="3" stroke-linecap="round"/>
+            <text x="22" y="128" text-anchor="middle" font-size="14">Guru</text>
+          </g>
+          <g transform="translate(112,52)">
+            <g class="isle-one">
+              <path d="M8 26 C8 6 36 4 36 26" fill="#0c1438"/>
+              <circle cx="22" cy="28" r="14" fill="#ffffff" stroke="#0c1438" stroke-width="2.5"/>
+              <circle cx="16" cy="27" r="4.2" fill="#5ec5a7" stroke="#0c1438" stroke-width="2"/>
+              <circle cx="28" cy="27" r="4.2" fill="#5ec5a7" stroke="#0c1438" stroke-width="2"/>
+              <path d="M16 35 q6 4 12 0" fill="none" stroke="#0c1438" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M8 104 V74 C8 58 14 50 22 50 C30 50 36 58 36 74 V104" fill="#5ec5a7" stroke="#0c1438" stroke-width="2.5"/>
+              <path d="M1 68 H10 M34 68 H43" fill="none" stroke="#0c1438" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+          <g transform="translate(196,52)">
+            <g class="isle-one">
+              <path d="M8 26 C8 6 36 4 36 26" fill="#0c1438"/>
+              <circle cx="22" cy="28" r="14" fill="#ffffff" stroke="#0c1438" stroke-width="2.5"/>
+              <circle cx="16" cy="27" r="4.2" fill="#5ec5a7" stroke="#0c1438" stroke-width="2"/>
+              <circle cx="28" cy="27" r="4.2" fill="#5ec5a7" stroke="#0c1438" stroke-width="2"/>
+              <path d="M16 35 q6 4 12 0" fill="none" stroke="#0c1438" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M8 104 V74 C8 58 14 50 22 50 C30 50 36 58 36 74 V104" fill="#5ec5a7" stroke="#0c1438" stroke-width="2.5"/>
+              <path d="M1 68 H10 M34 68 H43" fill="none" stroke="#0c1438" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+          <g transform="translate(280,52)">
+            <g class="isle-one" data-leave="1">
+              <path d="M8 26 C8 6 36 4 36 26" fill="#0c1438"/>
+              <circle cx="22" cy="28" r="14" fill="#ffffff" stroke="#0c1438" stroke-width="2.5"/>
+              <circle cx="16" cy="27" r="4.2" fill="#f5c518" stroke="#0c1438" stroke-width="2"/>
+              <circle cx="28" cy="27" r="4.2" fill="#f5c518" stroke="#0c1438" stroke-width="2"/>
+              <path d="M16 35 q6 4 12 0" fill="none" stroke="#0c1438" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M8 104 V74 C8 58 14 50 22 50 C30 50 36 58 36 74 V104" fill="#5ec5a7" stroke="#0c1438" stroke-width="2.5"/>
+              <path d="M1 68 H10 M34 68 H43" fill="none" stroke="#0c1438" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+          <g transform="translate(364,52)">
+            <g class="isle-one" data-leave="1">
+              <path d="M8 26 C8 6 36 4 36 26" fill="#0c1438"/>
+              <circle cx="22" cy="28" r="14" fill="#ffffff" stroke="#0c1438" stroke-width="2.5"/>
+              <circle cx="16" cy="27" r="4.2" fill="#f5c518" stroke="#0c1438" stroke-width="2"/>
+              <circle cx="28" cy="27" r="4.2" fill="#f5c518" stroke="#0c1438" stroke-width="2"/>
+              <path d="M16 35 q6 4 12 0" fill="none" stroke="#0c1438" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M8 104 V74 C8 58 14 50 22 50 C30 50 36 58 36 74 V104" fill="#5ec5a7" stroke="#0c1438" stroke-width="2.5"/>
+              <path d="M1 68 H10 M34 68 H43" fill="none" stroke="#0c1438" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+          <g transform="translate(448,52)">
+            <g class="isle-one" data-leave="1">
+              <path d="M8 26 C8 6 36 4 36 26" fill="#0c1438"/>
+              <circle cx="22" cy="28" r="14" fill="#ffffff" stroke="#0c1438" stroke-width="2.5"/>
+              <circle cx="16" cy="27" r="4.2" fill="#f5c518" stroke="#0c1438" stroke-width="2"/>
+              <circle cx="28" cy="27" r="4.2" fill="#f5c518" stroke="#0c1438" stroke-width="2"/>
+              <path d="M16 35 q6 4 12 0" fill="none" stroke="#0c1438" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M8 104 V74 C8 58 14 50 22 50 C30 50 36 58 36 74 V104" fill="#5ec5a7" stroke="#0c1438" stroke-width="2.5"/>
+              <path d="M1 68 H10 M34 68 H43" fill="none" stroke="#0c1438" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+        </svg>
+        <p class="isle-count">Night <b id="night-num">—</b></p>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="next">Next night</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The guru’s public statement creates common knowledge.</p>
+        <p>Each night that no one leaves gives everyone new information.</p>
+        <p>On the night that matches the real number of yellow-eyed people, they all deduce their eye color and leave.</p>
+        <p>Muddy children are the same count. Aumann's agreement theorem uses the same public step.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/islanders.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

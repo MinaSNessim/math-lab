@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ice cream and drowning · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Ice cream and drowning">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">cause · statistics</p>
+      <h1>Ice cream and drowning</h1>
+      <p class="lead">Ice cream sales and drowning both increase in summer.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">Ice cream sales and drowning both increase in summer. They rise together, but one does not cause the other.</p>
+        <div class="ice-fig">
+          <svg class="ice-sun" id="sun" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="14"/>
+            <rect x="37" y="4" width="6" height="12"/>
+            <rect x="37" y="4" width="6" height="12" transform="rotate(45 40 40)"/>
+            <rect x="37" y="4" width="6" height="12" transform="rotate(90 40 40)"/>
+            <rect x="37" y="4" width="6" height="12" transform="rotate(135 40 40)"/>
+            <rect x="37" y="4" width="6" height="12" transform="rotate(180 40 40)"/>
+            <rect x="37" y="4" width="6" height="12" transform="rotate(225 40 40)"/>
+            <rect x="37" y="4" width="6" height="12" transform="rotate(270 40 40)"/>
+            <rect x="37" y="4" width="6" height="12" transform="rotate(315 40 40)"/>
+          </svg>
+          <div class="ice-pair">
+            <div class="ice-col">
+              <i class="ice-drop" id="drop-l"></i>
+              <div class="ice-track"><div class="ice-bar" id="bar-ice"></div></div>
+              <b>Ice cream</b>
+            </div>
+            <div class="ice-gap">
+              <i class="ice-link lr" id="link-lr"></i>
+              <i class="ice-link rl" id="link-rl"></i>
+            </div>
+            <div class="ice-col">
+              <i class="ice-drop" id="drop-r"></i>
+              <div class="ice-track"><div class="ice-bar" id="bar-drown"></div></div>
+              <b>Drowning</b>
+            </div>
+          </div>
+        </div>
+        <p class="ice-line" id="line" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="summer">Make it summer</button>
+          <div class="ice-claims" id="claims" hidden>
+            <button type="button" class="btn" id="cause-ice">Ice cream causes drowning</button>
+            <button type="button" class="btn" id="cause-drown">Drowning causes ice cream</button>
+            <button type="button" class="btn" id="cause-hot">Hot weather causes both</button>
+          </div>
+          <button type="button" class="btn ice-only" id="only" hidden>Change only ice cream</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Ice cream sales and drowning both rise in summer.</p>
+        <p>The sun is the season. The two stacks are the two counts.</p>
+        <p class="spoiler" id="lock" hidden data-act="Change only ice cream">Rising together shows a link. It does not show the direction or the real cause. Only changing one thing on purpose can help reveal what is actually happening. Correlation does not imply causation.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/ice-cream.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

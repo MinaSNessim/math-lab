@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Missing square puzzle · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Missing square puzzle">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">paradox · traps · counting</p>
+      <h1>Missing square puzzle</h1>
+      <p class="lead">Four pieces. Two pictures.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">These are the same four pieces. Where did the empty square come from?</p>
+        <div class="board-scroll">
+          <svg id="fig" width="390" height="270" viewBox="0 0 390 270" aria-hidden="true">
+            <g id="grid"></g>
+            <g class="sq-piece" id="big" style="transform:translate(20px,150px)">
+              <polygon points="0,0 208,-78 208,0" fill="#5ec5a7" stroke="#0c1438" stroke-width="2" stroke-linejoin="round"/>
+            </g>
+            <g class="sq-piece" id="small" style="transform:translate(228px,72px)">
+              <polygon points="0,0 130,-52 130,0" fill="#fe8e83" stroke="#0c1438" stroke-width="2" stroke-linejoin="round"/>
+            </g>
+            <g class="sq-piece" id="mid" style="transform:translate(228px,124px)">
+              <polygon points="0,0 0,-52 130,-52 130,-26 52,-26 52,0" fill="#7aa2f7" stroke="#0c1438" stroke-width="2" stroke-linejoin="round"/>
+            </g>
+            <g class="sq-piece" id="low" style="transform:translate(228px,150px)">
+              <polygon points="0,0 0,-26 52,-26 52,-52 130,-52 130,0" fill="#f6c45c" stroke="#0c1438" stroke-width="2" stroke-linejoin="round"/>
+            </g>
+            <line x1="20" y1="150" x2="358" y2="20" stroke="#657295" stroke-width="2" stroke-dasharray="5 4"/>
+            <rect class="sq-hole" x="202" y="124" width="26" height="26" fill="#ffffff" stroke="#fe8e83" stroke-width="2" stroke-dasharray="4 3"/>
+            <text class="sq-hole-num" x="215" y="142" text-anchor="middle" font-size="14" font-weight="800" fill="#0c1438" font-family="Nunito, sans-serif">1</text>
+            <text x="20" y="176" font-size="13" font-weight="800" fill="#657295" font-family="Nunito, sans-serif">Long edge, stretched tall</text>
+            <line x1="20" y1="220" x2="358" y2="220" stroke="#657295" stroke-width="2" stroke-dasharray="5 4"/>
+            <polyline class="sq-edge" id="edge-a" points="20,220 228,246 358,220" fill="none" stroke="#fe8e83" stroke-width="3" stroke-linejoin="round"/>
+            <polyline class="sq-edge is-off" id="edge-b" points="20,220 150,194 358,220" fill="none" stroke="#fe8e83" stroke-width="3" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="edge-note">Dashed line: a straight edge would cover 32.5.</p>
+        <div class="pair-totals">
+          <p><b id="colored">32</b> colored</p>
+          <p><b id="empty">0</b> empty</p>
+        </div>
+        <p class="caption" id="caption">Colored 32. Empty 0. The long edge bends in.</p>
+        <div class="controls">
+          <button type="button" class="btn is-on" id="no-hole">No hole</button>
+          <button type="button" class="btn ghost" id="with-hole">With a hole</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Colored squares stay 32. The empty count is the square on the picture, 0 or 1.</p>
+        <p>The long edge bends in when the empty count is 0, and out when it is 1. The dashed line is the straight edge.</p>
+        <p>A straight edge would close 32.5 squares. The bend is the empty square. The four pieces did not change size.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/missing-square.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

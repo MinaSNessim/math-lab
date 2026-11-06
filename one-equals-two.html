@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1 = 2 · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="1 = 2">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">traps · logic</p>
+      <h1>1 = 2</h1>
+      <p class="lead">The steps use a = 1 and b = 1.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">These steps start from 1 = 1 and arrive at 2 = 1. Which step is not allowed?</p>
+        <div class="eq-board" id="board">
+          <div class="step-mark is-hidden" id="mark"></div>
+          <ol class="eqs" id="eqs">
+            <li>
+              <span>1</span>
+              <span>a = b</span>
+              <span class="eq-v">1 = 1</span>
+            </li>
+            <li>
+              <span>2</span>
+              <span>a<sup>2</sup> = ab</span>
+              <span class="eq-v">1 = 1</span>
+            </li>
+            <li>
+              <span>3</span>
+              <span>a<sup>2</sup> − b<sup>2</sup> = ab − b<sup>2</sup></span>
+              <span class="eq-v">0 = 0</span>
+            </li>
+            <li>
+              <span>4</span>
+              <span>(a − b)(a + b) = b(a − b)</span>
+              <span class="eq-v">0 × 2 = 1 × 0</span>
+            </li>
+            <li>
+              <span>5</span>
+              <span>a + b = b</span>
+              <span class="eq-v">2 = 1</span>
+            </li>
+          </ol>
+        </div>
+        <p class="caption" id="caption">a and b are both 1. Pick the step that is not allowed.</p>
+        <div class="controls">
+          <button type="button" class="btn" data-row="0">a = b</button>
+          <button type="button" class="btn" data-row="1">Square both sides</button>
+          <button type="button" class="btn" data-row="2">Subtract b squared</button>
+          <button type="button" class="btn" data-row="3">Factor both sides</button>
+          <button type="button" class="btn" data-row="4">Cross out the same factor on both sides</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p class="spoiler" hidden data-act="Cross out the same factor">Both sides were multiplied by 0. Crossing that factor out is dividing by 0, so the step is not allowed. 2 = 1 does not follow.</p>
+        <p>Every earlier line is true for the number 1. The two sides on those lines really match.</p>
+        <p>The last line is only what you get after dividing by 0. It is not a true result.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/one-equals-two.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

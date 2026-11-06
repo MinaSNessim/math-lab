@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Knights and knaves · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Knights and knaves">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Knights and knaves | Hardest logic puzzle -->
+      <p class="kicker">logic</p>
+      <h1>Knights and knaves</h1>
+      <p class="lead">Knights always tell the truth. Knaves always lie.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">Knights always tell the truth. Knaves always lie. You meet two people. One says: “We are both knaves.”</p>
+        <img class="scene" src="images/knights.jpg" alt="">
+<p class="pair-read"><b id="label-l">Left</b><b id="mark" class="say-mark">×</b><b id="label-r">Right</b></p>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="as-knight" data-pace="400">Left is a knight</button>
+          <button type="button" class="btn" id="as-knave" data-pace="400">Left is a knave</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The speaker says “We are both knaves.”</p>
+        <p>A knight could never say that, because it would be false.</p>
+        <p>So the speaker is a knave, which means the statement is a lie, so they are not both knaves.</p>
+        <p>The other person must be a knight.</p>
+        <p>The hardest logic puzzle adds a third person who answers at random. The words da and ja give no telling which is yes.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/knights.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

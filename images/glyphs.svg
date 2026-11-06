@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="line-set" aria-hidden="true">
+  <defs>
+    <g id="stroke">
+    </g>
+  </defs>
+  <symbol id="g-person" viewBox="0 0 48 84">
+    <circle cx="24" cy="12" r="7" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <path d="M24 19v28M10 34h28M24 47 14 74M24 47 34 74" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="g-boy" viewBox="0 0 48 84">
+    <circle cx="24" cy="12" r="7" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M17 8c2-4 12-4 14 0M24 19v28M10 34h28M24 47 14 74M24 47 34 74" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="g-girl" viewBox="0 0 48 84">
+    <circle cx="24" cy="12" r="7" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M16 12c-2 10-1 18 2 22M32 12c2 10 1 18-2 22M24 19v18M10 34h28M24 47 14 74M24 47 34 74" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="g-door" viewBox="0 0 48 80">
+    <path d="M12 10h24v60H12z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M12 10h24" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="30" cy="42" r="2.2" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="g-goat" viewBox="0 0 72 64">
+    <path d="M22 28c-8 2-12 12-8 20M50 28c8 2 12 12 8 20" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <ellipse cx="36" cy="36" rx="16" ry="12" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="52" cy="30" r="7" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M48 24c2-8 6-10 8-8M56 22c2-8 7-8 8-4" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <circle cx="55" cy="29" r="1.2" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M28 46v12M40 46v12" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-car" viewBox="0 0 88 48">
+    <path d="M10 32h68v8H10zM22 32l8-12h28l10 12" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <circle cx="26" cy="40" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="64" cy="40" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="64" cy="40" r="2" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="g-coin-heads" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="16" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M24 12v24" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-coin-tails" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="16" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M12 24h24" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-coin-gold" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="16" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="24" cy="24" r="6" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="g-box" viewBox="0 0 56 56">
+    <path d="M10 20h36v26H10z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M10 20 28 10l18 10M28 10v10" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-page" viewBox="0 0 44 64">
+    <path d="M8 6h28v52H8z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M14 20h16M14 28h16M14 36h10" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <path d="M14 44h16" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-envelope" viewBox="0 0 64 44">
+    <path d="M6 8h52v28H6z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M6 8 32 26 58 8" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-bed" viewBox="0 0 88 56">
+    <path d="M8 32h72v14H8zM8 32V16M80 32V22" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M14 32v-6h16v6" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="g-chord" viewBox="0 0 80 80">
+    <circle cx="40" cy="40" r="28" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M18 52 62 28" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-machine" viewBox="0 0 52 72">
+    <path d="M8 8h36v56H8z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <circle cx="26" cy="28" r="10" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M44 18h6v16" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="g-maze" viewBox="0 0 80 80">
+    <path d="M8 8h64v64H8zM8 28h24M32 28v24M32 40h24M56 20v32M20 52h24" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M20 16v12h12" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-bus" viewBox="0 0 96 48">
+    <path d="M8 14h80v22H8z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M8 24h80" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="24" cy="36" r="5" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="72" cy="36" r="5" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="g-plane" viewBox="0 0 88 40">
+    <path d="M4 24h36l10-12 6 12h28l-8 6H54L44 36l-6-6H12z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-plane-holes" viewBox="0 0 88 40">
+    <path d="M4 24h36l10-12 6 12h28l-8 6H54L44 36l-6-6H12z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="30" cy="26" r="2.2" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="40" cy="26" r="2.2" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="62" cy="24" r="2.2" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="g-stag" viewBox="0 0 80 64">
+    <ellipse cx="40" cy="40" rx="18" ry="10" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="58" cy="32" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M54 26c-2-10 2-14 0-18M60 26c4-8 10-10 8-16M28 46v12M46 46v12" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <path d="M56 24c2-6 8-6 6-12" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-hare" viewBox="0 0 56 64">
+    <ellipse cx="30" cy="42" rx="14" ry="10" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="44" cy="34" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M40 28c-2-14 2-20 0-24M48 28c4-12 8-14 6-22" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <path d="M22 50c-8 2-12 8-8 12" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="g-cake" viewBox="0 0 64 56">
+    <path d="M10 24h44v20H10z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M10 24c0-8 44-8 44 0" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <path d="M10 34h44" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="g-tram" viewBox="0 0 88 56">
+    <path d="M14 20h60v24H14z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M14 20 24 8h40l10 12M32 20v24M56 20v24" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M44 8V2" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <circle cx="28" cy="44" r="4" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="60" cy="44" r="4" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="g-ship" viewBox="0 0 88 64">
+    <path d="M12 40h64l-8 14H22z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M44 40V10" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <path d="M44 14 66 36H44" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="g-heap" viewBox="0 0 72 56">
+    <circle cx="36" cy="16" r="8" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="24" cy="30" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="48" cy="30" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="16" cy="44" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="36" cy="44" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+    <circle cx="56" cy="44" r="8" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="g-cup" viewBox="0 0 44 48">
+    <path d="M8 10h24v16c0 8-24 8-24 0z" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+    <path d="M8 12h24" fill="none" stroke="#0e8a7d" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+    <path d="M32 16h6c4 0 4 10 0 10h-6" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+</svg>

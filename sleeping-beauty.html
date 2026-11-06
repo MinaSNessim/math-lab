@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sleeping Beauty paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Sleeping Beauty paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">paradox · traps · decisions</p>
+      <h1>Sleeping Beauty paradox</h1>
+      <p class="lead">Half, or one third? Both answers are still in the room.</p>
+      <section class="stage">
+        <p class="ice-intro">She wakes and asks the chance of heads. Which count answers her?</p>
+        <div class="sb-board">
+          <img class="bed" src="images/bed.png" alt="">
+          <div class="beauty-row" id="scene">
+            <div class="sb-week is-heads" id="week-heads">
+              <img class="coin" src="images/coin-heads.png" alt="">
+              <span class="wake is-awake">Monday</span>
+              <b>Heads</b>
+            </div>
+            <div class="sb-week is-tails" id="week-tails">
+              <img class="coin" src="images/coin-tails.png" alt="">
+              <span class="wake is-awake">Monday</span>
+              <span class="wake is-awake">Tuesday</span>
+              <b>Tails</b>
+            </div>
+          </div>
+        </div>
+        <p class="caption" id="caption">Heads wakes her once, on Monday. Tails wakes her on Monday and on Tuesday.</p>
+        <div class="controls guess">
+          <span class="field">The coin is heads</span>
+          <button type="button" class="btn ghost" id="guess-half">Half</button>
+          <button type="button" class="btn ghost" id="guess-third">One third</button>
+          <span class="guess-note" id="guess-note">Lock an answer, then flip the week.</span>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn ghost" id="score-week">Count each week once</button>
+          <button type="button" class="btn ghost" id="score-wake">Count each awakening</button>
+          <button type="button" class="btn" id="once">Flip one week</button>
+          <label class="field">Weeks <input class="count" id="count" type="number" min="1" max="20000" value="600" /></label>
+          <button type="button" class="btn coral" id="run" disabled>Run many weeks</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="this-week">—</b><span>This week</span></div>
+          <div class="stat" id="stat-week"><b id="weeks">—</b><span>Heads among weeks</span></div>
+          <div class="stat" id="stat-wake"><b id="wakes">—</b><span>Heads among awakenings</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The coin is fair, so half the weeks are heads.</p>
+        <p>Tails wakes her on Monday and again on Tuesday. Heads wakes her once.</p>
+        <p class="spoiler" hidden>Heads is about half of the weeks and about one third of the awakenings. The scoring rule picks which of those two numbers answers the question.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/sleeping-beauty.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

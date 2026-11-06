@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Two generals · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Two generals">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">logic · information</p>
+      <h1>Two generals</h1>
+      <p class="lead">A message is not enough. The acknowledgement is not enough either.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">Two armies must attack together. They can only send messages by messenger, and messages can be lost.</p>
+        <svg class="fort-board" viewBox="0 0 640 230" role="img" aria-label="Two forts and a messenger on the path between them">
+          <line x1="210" y1="198" x2="450" y2="198" stroke="#0c1438" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+          <g id="fort-a">
+            <rect id="body-a" class="fort-body" x="36" y="70" width="128" height="100" rx="8" fill="#5ec5a7" stroke="#0c1438" stroke-width="3"/>
+            <rect x="84" y="138" width="32" height="32" rx="4" fill="#fe8e83" stroke="#0c1438" stroke-width="3"/>
+            <rect x="88" y="42" width="6" height="32" fill="#0c1438"/>
+            <rect x="94" y="42" width="30" height="16" rx="2" fill="#f5c518" stroke="#0c1438" stroke-width="2"/>
+            <text x="100" y="128" text-anchor="middle" font-size="32">A</text>
+          </g>
+          <g id="fort-b">
+            <rect id="body-b" class="fort-body" x="476" y="70" width="128" height="100" rx="8" fill="#5ec5a7" stroke="#0c1438" stroke-width="3"/>
+            <rect x="524" y="138" width="32" height="32" rx="4" fill="#fe8e83" stroke="#0c1438" stroke-width="3"/>
+            <rect x="528" y="42" width="6" height="32" fill="#0c1438"/>
+            <rect x="534" y="42" width="30" height="16" rx="2" fill="#f5c518" stroke="#0c1438" stroke-width="2"/>
+            <text x="540" y="128" text-anchor="middle" font-size="32">B</text>
+          </g>
+          <g id="messenger" class="messenger">
+            <image href="images/person.png" x="176" y="132" width="44" height="64" preserveAspectRatio="xMidYMax meet"/>
+          </g>
+        </svg>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="send">Send messenger</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>Each message needs confirmation, and each confirmation needs its own confirmation.</p>
+        <p>Neither general can ever be sure the other has received the final message.</p>
+        <p>Certain agreement is impossible with unreliable communication.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/generals.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

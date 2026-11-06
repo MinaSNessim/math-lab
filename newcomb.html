@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newcomb's paradox · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Newcomb's paradox">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Newcomb's paradox | Kavka's toxin puzzle -->
+      <p class="kicker">decisions · paradox</p>
+      <h1>Newcomb's paradox</h1>
+      <p class="lead">One box or both, and the predictor has already packed them.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">The yellow box was packed before you choose. A predictor that is almost always right put $1 million in it if it thought you would leave the clear box, and left it empty if it thought you would take both. The clear box has $1,000 either way. The packing is finished. Do you take only the yellow box, or both?</p>
+        <p class="predicted">Packed before you choose</p>
+        <div class="box-row">
+          <img src="images/person.png" alt="">
+          <div class="box-col">
+            <div class="money-box clear"><b>$1,000</b></div>
+            <p class="box-name">Clear box. You can see it.</p>
+          </div>
+          <div class="box-col">
+            <div class="money-box opaque" id="opaque">
+              <b id="opaque-fill"></b>
+              <i class="box-lid" aria-hidden="true"></i>
+            </div>
+            <p class="box-name">Yellow box. You cannot see inside.</p>
+          </div>
+        </div>
+        <div class="compare" id="compare" hidden>
+          <p id="row-one">Only the yellow box: $1 million</p>
+          <p id="row-both">Both boxes: $1,000, and the yellow box is empty</p>
+        </div>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+        <div class="controls">
+          <button type="button" class="btn" id="take-one" data-pace="900">Take only the yellow box</button>
+          <button type="button" class="btn" id="take-both" data-pace="900">Take both boxes</button>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The yellow box is the opaque one. Opaque means you cannot see inside, and the predictor will not repack it after you choose.</p>
+        <p>If the predictor expected you to take only the yellow box, that box holds $1 million. If it expected you to take both, the yellow box is empty and you still get the $1,000 you can see.</p>
+        <p>One reason says the boxes are already packed, so taking both pays $1,000 more than taking one, whatever is inside the yellow box.</p>
+        <p>The other reason says the predictor is almost always right, so the people who take only the yellow box are the ones who find $1 million.</p>
+        <p>Those two reasons disagree. That is Newcomb's paradox.</p>
+        <p>Kavka's toxin puzzle pays you tonight for intending to drink a mild toxin tomorrow, and tomorrow the money is already settled.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/newcomb.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

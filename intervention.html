@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intervention vs observation · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Intervention vs observation">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <!-- merged: Intervention vs observation | Do-calculus | Bad controls -->
+      <p class="kicker">cause</p>
+      <h1>Intervention vs observation</h1>
+      <p class="lead">Watching who already drinks the coffee is not the same as handing them the cup.</p>
+      <section class="stage playboard cup-board" id="board">
+        <p class="ice-intro">Two people already drink, and they are ill. One person has no cup, and they are well. Does giving a cup to the well person make them ill?</p>
+        <div class="cup-fig" id="fig">
+          <div class="cup-row">
+            <div class="cup-person ill">
+              <img class="who" src="images/person.png" alt="">
+              <img class="cup-own" src="images/cup.png" alt="">
+              <b>Ill</b>
+            </div>
+            <div class="cup-person ill">
+              <img class="who" src="images/person.png" alt="">
+              <img class="cup-own" src="images/cup.png" alt="">
+              <b>Ill</b>
+            </div>
+            <div class="cup-person well" id="well">
+              <span class="cup-spot" id="spot"></span>
+              <img class="who" src="images/person.png" alt="">
+              <b>Well</b>
+              <img class="cup-move" id="cup" src="images/cup.png" alt="">
+            </div>
+          </div>
+        </div>
+        <p class="ice-line" id="line" aria-live="polite"></p>
+        <div class="controls">
+          <div class="ice-claims cols-2">
+            <button type="button" class="btn" id="watch" data-pace="200">Watch who already drinks</button>
+            <button type="button" class="btn" id="give" data-pace="200">Hand the cup to someone well</button>
+          </div>
+        </div>
+      </section>
+      <div class="notes">
+        <p><b>Watching.</b> Recording who already drinks coffee also records the other habits that came with the cup.</p>
+        <p><b>Handing over the cup.</b> Assigning the coffee is a button you press, and that difference from merely watching is called do-calculus.</p>
+        <p><b>A bad adjustment.</b> If a medicine sends people home sooner and you then compare only people who left together, you have adjusted for a thing the medicine caused.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/intervention.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

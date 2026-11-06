@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pascal's wager · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Pascal's wager">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">decisions · logic</p>
+      <h1>Pascal's wager</h1>
+      <p class="lead">An infinite branch can swamp every ordinary cost, which is a reason to look hard at the table.</p>
+      <section class="stage playboard">
+        <p class="ice-intro">You can believe or not, and God may exist or not. One cell pays forever. The others are a finite gain or a finite loss. Does that one cell decide the choice?</p>
+        <img class="scene" src="images/pascal.jpg" alt="">
+        <p class="round-label">Yellow is an infinite gain. Red is a finite loss. Green is a finite gain.</p>
+        <div class="wager-wrap">
+          <div class="wager">
+            <span></span>
+            <span class="wager-h">God exists</span>
+            <span class="wager-h">God does not exist</span>
+            <span class="wager-r">Believe</span>
+            <button type="button" class="wager-cell is-inf" id="cell-be" data-pace="200">&#8734;</button>
+            <button type="button" class="wager-cell is-loss" id="cell-bn" data-pace="200">finite loss</button>
+            <span class="wager-r">Don't believe</span>
+            <button type="button" class="wager-cell is-loss" id="cell-de" data-pace="200">finite loss</button>
+            <button type="button" class="wager-cell is-gain" id="cell-dn" data-pace="200">finite gain</button>
+          </div>
+        </div>
+        <p class="caption logic-caption" id="caption" aria-live="polite"></p>
+      </section>
+      <div class="notes">
+        <p>The yellow cell is the only infinite one: you believe, and God exists.</p>
+        <p>Believing if God does not exist is a finite loss. Not believing if God exists is a finite loss. Not believing if God does not exist is a finite gain.</p>
+        <p>Any chance of an infinite gain, even a small one, makes the average for believing infinite. A finite loss cannot catch it.</p>
+        <p>So the argument says believe. The cost of being wrong is finite, and the yellow cell swamps that cost.</p>
+        <p>Two things have to hold. You have to be able to choose belief the way you choose a box. And this infinite prize has to be the one that counts, not an infinite prize for some other belief.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/pascal.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>

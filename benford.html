@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Benford's law · CounterMath Lab</title>
+  <link rel="icon" href="images/mark.svg" />
+  <link rel="stylesheet" href="css/gym.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 108 64" aria-hidden="true">
+          <path d="M42 16a18 18 0 1 0 .2 32" fill="none" stroke="#14b3a6" stroke-width="7.5" stroke-linecap="round"/>
+          <g fill="#1c3358">
+            <circle cx="24.5" cy="26.5" r="1.35"/>
+            <circle cx="28.6" cy="26.5" r="1.35"/>
+            <circle cx="32.7" cy="26.5" r="1.35"/>
+            <circle cx="24.5" cy="31" r="1.35"/>
+            <circle cx="28.6" cy="31" r="1.35"/>
+            <circle cx="32.7" cy="31" r="1.35"/>
+            <circle cx="24.5" cy="35.5" r="1.35"/>
+            <circle cx="28.6" cy="35.5" r="1.35"/>
+            <circle cx="32.7" cy="35.5" r="1.35"/>
+          </g>
+          <path fill="#1c3358" d="M62 50V16h7.2l6.4 14.6L82 16h7.4V50h-6.2V28.6L76.6 42.4h-3.8L66.2 28.6V50z"/>
+        </svg>
+        <span class="word">
+          <span class="word-name"><span class="counter">Counter</span><span class="math">Math</span></span>
+          <span class="brand-lab">Lab</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Site">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="about.html">About me</a>
+      </nav>
+    </header>
+    <article class="lesson" data-ask="Benford's law">
+      <button type="button" class="btn ghost play-again" id="again">Play again</button>
+      <p class="kicker">fairness · counting · statistics</p>
+      <h1>Benford's law</h1>
+      <p class="lead">In real lists, 1 is a first digit more often than 9.</p>
+      <section class="stage">
+        <p class="ice-intro">Look at the first digits. Which digit shows up most?</p>
+        <div class="sheet">
+          <img src="images/page.png" alt="">
+          <p class="num-list" id="numbers"></p>
+        </div>
+        <div class="bars digit-bars" id="bars"></div>
+        <p class="caption" id="caption">The coral figure is the first digit. A list that spreads across many sizes is not the same as counting 1, 2, 3.</p>
+        <div class="controls guess">
+          <label class="field">First digit is 1 <input id="guess" type="range" min="0" max="100" value="11" /> <b id="guess-label">11%</b></label>
+          <button type="button" class="btn" id="lock">Lock guess</button>
+          <span class="guess-note" id="guess-note">Lock a share, then read the list.</span>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn ghost" id="rule-grow">Numbers that grow</button>
+          <button type="button" class="btn ghost" id="rule-count">Counting in order</button>
+          <button type="button" class="btn" id="once">Show eight numbers</button>
+          <label class="field">Numbers <input class="count" id="count" type="number" min="1" max="20000" value="2000" /></label>
+          <button type="button" class="btn coral" id="run" disabled>Run a long list</button>
+        </div>
+        <div class="readout">
+          <div class="stat"><b id="this-list">—</b><span>1s on this sheet</span></div>
+          <div class="stat"><b id="sim">—</b><span>1s in the long list</span></div>
+          <div class="stat"><b id="theory">—</b><span>Long-run share of 1s</span></div>
+        </div>
+      </section>
+      <div class="notes">
+        <p>The first digit is the leftmost figure. 148 and 19 both start with 1.</p>
+        <p>Numbers that spread across many sizes put 1 first more often than 9. A plain count does not.</p>
+        <p class="spoiler" hidden>In the growing list, 1 leads about 30% of the time and 9 leads about 5%. Counting in order, each digit from 1 to 9 leads about 11% of the time.</p>
+      </div>
+    </article>
+  </div>
+  <script src="js/gym-run.js"></script>
+  <script src="js/benford.js"></script>
+  <script src="js/seen.js"></script>
+  <script src="js/beats.js"></script>
+</body>
+</html>
